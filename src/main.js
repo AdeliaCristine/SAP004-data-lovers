@@ -70,7 +70,7 @@ document.getElementById("pokes").style.display="block";
 function searchName (event){
    event.preventDefault();
       let nomePokemon = document.getElementById("name-pokemon").value;
-      //document.getElementById("filtrado").innerHTML= `O nome digitado foi ${nomePokemon}.`
+      document.getElementById("filtrado").innerHTML= `O nome digitado foi ${nomePokemon}.`
       function agoravai2(){
          //var nomesPokes = [data.pokemon[x].name];
          function checkNames() {
@@ -105,15 +105,17 @@ console.log(filterItems('pi')); // ['banana', 'mango', 'orange']
 
 function filterType(){
    let tipofil = document.getElementById("filter-type").value;
-   document.getElementById("filtrado").innerHTML= `O tipo escolhido foi ${tipofil}.`
+  // document.getElementById("filtrado").innerHTML= `O tipo escolhido foi ${tipofil}.`
    
-   let isso = data.pokemon.filter((nomedeles) => {
-      return nomedeles.type === 'dog';
-    })
+   /*let isso = data.pokemon.filter((nomedeles) => (
+         nomedeles.type === tipofil
+      )
+      );//console.log(isso);*/
+
    function agoravai(x){
    
-         const tipos = [data.pokemon[x].type[x]];
-         for(let tipo of tipos) {
+         const tipos = data.pokemon[x].type;
+         //for(let tipo of tipos) {
          
         // document.getElementById("filtrado").innerHTML+= tipo;
    
@@ -123,15 +125,16 @@ function tipodotipo(tipos) {
  }
  //var filtered = [data.pokemon[x].type].filter(tipodotipo);
    console.log(tipos);
-   console.log(tipo);
-   console.log(tipofil);
+  // console.log(tipo);
+   console.log(tipos == tipofil);
+   console.log("teste",tipos.includes(tipofil));
   
-   if (tipo==tipofil || tipo||tipofil){
+   if (tipos.includes(tipofil)){
       document.getElementById("filtrado").innerHTML+= `
       <div class="coluna">
       <img src=${data.pokemon[x].img}>
-      <p class:"text">${data.pokemon[x].name}</p>
-      <p class:"text">${data.pokemon[x].type}</p>
+      <p class:"text">Nome:${data.pokemon[x].name}</p>
+      <p class:"text">Tipo:${data.pokemon[x].type}</p>
       </div>
       `;
       //console.log(`Você escolheu o tipo ${tipofil}`);
@@ -140,7 +143,7 @@ function tipodotipo(tipos) {
    }
   //console.log(filtered);
   //console.log(tipos = tipofil);
-}
+//}
  
       }
       function tipoNoHtml(){
@@ -153,11 +156,11 @@ function tipodotipo(tipos) {
       }
       tipoNoHtml();
 
-      function tipocerto(pokemon) {
-         return (data.pokemon[0].type=== tipofil)
+      /*function tipocerto(x) {
+            return (data.pokemon[x].type=== tipofil)
       }
-      tipocerto();
-      console.log(Object.keys(tipocerto));
+      tipocerto();*/
+      //console.log(Object.keys(tipocerto));
       //console.log(tipocerto);
       
    }
