@@ -122,8 +122,8 @@ function tipodotipo(tipos) {
 
  }
  //var filtered = [data.pokemon[x].type].filter(tipodotipo);
-   //console.log(tipos);
-   //console.log(tipo);
+   console.log(tipos);
+   console.log(tipo);
    console.log(tipofil);
   
    if (tipo==tipofil || tipo||tipofil){
