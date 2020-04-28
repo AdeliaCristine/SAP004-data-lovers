@@ -2,6 +2,23 @@ import { example } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
+//Botão topo
+
+window.onscroll = function (){
+   scroll();
+}
+
+function scroll(){
+   let btnTop= document.getElementById("btn-top")
+   if(document.documentElement.scrollTop>50){
+      btnTop.style.display = "block"
+   }else{
+      btnTop.style.display= "none"
+   }
+   
+}
+
+
 
 function pokemonImage (numeroDoIdDoPersonagem){
 const caminho = data.pokemon[numeroDoIdDoPersonagem];
@@ -23,31 +40,20 @@ document.getElementById("pokes").innerHTML+= htmlCards;
 }
 criaImagemNoHtml();
 
-
-
-
-//document.getElementById("test-pesq").addEventListener("click", clearSearch);
+document.getElementById("test-pesq").addEventListener("click", clearSearch);
 document.getElementById("filter-type").addEventListener("change", clearType);
 document.getElementById("filter-weakness").addEventListener("change", clearWeakness);
 document.getElementById("order-search").addEventListener("change", clearOrder);
-//document.getElementById("test-pesq").addEventListener("click", searchName);
+document.getElementById("test-pesq").addEventListener("click", searchName);
 document.getElementById("filter-type").addEventListener("change", filterType);
 document.getElementById("filter-weakness").addEventListener("change", filterWea);
 document.getElementById("order-search").addEventListener("change", orderSea);
-document.getElementById("btn-top-all").addEventListener("click", vertodos);
-//document.getElementById("nome-pokemon").addEventListener("change", procuraNome);
-//document.getElementById("nome-pokemon").addEventListener("change", procuraNome);
+//document.getElementById("btn-top-all").addEventListener("click", vertodos);
 
-function procuraNome(){
-   let nomePokemon1 = document.getElementById("name-pokemon").value;
-   document.getElementById("filtrado").innerHTML= `O nome digitado foi ${nomePokemon1}.`
-   console.log(nomePokemon1);
-
-}
-/*function clearSearch(event){
+function clearSearch(event){
    event.preventDefault();
    document.getElementById("pokes").style.display="none"; 
-}*/
+}
 function clearType(){
    document.getElementById("pokes").style.display="none"; 
 }
@@ -57,81 +63,114 @@ function clearWeakness(){
 function clearOrder(){
    document.getElementById("pokes").style.display="none"; 
 }
-function vertodos(){
+/*function vertodos(){
 document.getElementById("pokes").style.display="block"; 
-}
+}*/
 
-/*function searchName (event){
+function searchName (event){
    event.preventDefault();
       let nomePokemon = document.getElementById("name-pokemon").value;
-      document.getElementById("filtrado").innerHTML= `O nome digitado foi ${nomePokemon}.`
-      
-      console.log(element.name);}*/
-
-
-function agoravai(x){
-      const tipos = [data.pokemon[x].type];
-      for(let tipo of tipos) {
-        // console.log(tipo);
-         return tipo;
+      //document.getElementById("filtrado").innerHTML= `O nome digitado foi ${nomePokemon}.`
+      function agoravai2(){
+         //var nomesPokes = [data.pokemon[x].name];
+         function checkNames() {
+            return nomePokemon == data.pokemon[0].name;
+         }
+      function myFunction() {
+      document.getElementById("filtrado").innerHTML = data.pokemon[0].name.filter(checkNames);
+      console.log(nomePokemon);
+      console.log(data.pokemon[0].name.filter(checkNames));
       }
-      function tipoNoHtml(){
-         let tipoCards='';
-         for (let i = 0; i<data.pokemon.length; i++){
-            
-            tipoCards+=agoravai(i)
-      }
-      document.getElementById("filtrado").innerHTML+= tipoCards;
-      console.log(tipoCards);
-      }
-      tipoNoHtml();
-
-      function tipocerto(pokemon) {
-         return (data.pokemon[x].type== tipo)
-      }
-      tipocerto();
-      console.log(tipocerto);
-      
-      data.pokemon[x].filter(tipocerto)
-      console.log(filter())
+      }agoravai2();
    }
-      
+  
+
+/*function filterItems(query) {
+   return nomesPokes.filter(function(el) {
+      return el.indexOf(query();
+   })
+}
+
+console.log(filterItems('bu')); // ['apple', 'grapes']
+console.log(filterItems('pi')); // ['banana', 'mango', 'orange']
+}*/
+
+
+/*function agoravai(x){
+      const tipos = [data.pokemon[0].type];
+      for(let tipo of tipos) {
+         console.log(tipo);
+         return tipo;
+      }}*/
 
 function filterType(){
    let tipofil = document.getElementById("filter-type").value;
+   document.getElementById("filtrado").innerHTML= `O tipo escolhido foi ${tipofil}.`
+   
+   let isso = data.pokemon.filter((nomedeles) => {
+      return nomedeles.type === 'dog';
+    })
    function agoravai(x){
-      const tipos = [data.pokemon[x].type];
-      for(let tipo of tipos) {
-        // console.log(tipo);
-         return tipo;
+   
+         const tipos = [data.pokemon[x].type[x]];
+         for(let tipo of tipos) {
+         
+        // document.getElementById("filtrado").innerHTML+= tipo;
+   
+function tipodotipo(tipos) {
+   return tipos == tipofil;
+
+ }
+ //var filtered = [data.pokemon[x].type].filter(tipodotipo);
+   //console.log(tipos);
+   //console.log(tipo);
+   console.log(tipofil);
+  
+   if (tipo==tipofil || tipo||tipofil){
+      document.getElementById("filtrado").innerHTML+= `
+      <div class="coluna">
+      <img src=${data.pokemon[x].img}>
+      <p class:"text">${data.pokemon[x].name}</p>
+      <p class:"text">${data.pokemon[x].type}</p>
+      </div>
+      `;
+      //console.log(`Você escolheu o tipo ${tipofil}`);
+   }else {
+      console.log("Não temos pokemon desse tipo");
+   }
+  //console.log(filtered);
+  //console.log(tipos = tipofil);
+}
+ 
       }
       function tipoNoHtml(){
          let tipoCards='';
          for (let i = 0; i<data.pokemon.length; i++){
-            
             tipoCards+=agoravai(i)
-      }
-      document.getElementById("filtrado").innerHTML+= tipoCards;
-      console.log(tipoCards);
+      } 
+      //document.getElementById("filtrado").innerHTML+= tipoCards;
+      //console.log(tipoCards);
       }
       tipoNoHtml();
 
       function tipocerto(pokemon) {
-         return (data.pokemon[x].type=== tipofil)
+         return (data.pokemon[0].type=== tipofil)
       }
       tipocerto();
-      console.log(tipocerto);/*
+      console.log(Object.keys(tipocerto));
+      //console.log(tipocerto);
       
-      data.pokemon[x].filter(tipocerto)
-      filter()*/
-      //console.log(filter())
    }
-   //document.getElementById("filtrado").innerHTML= `O tipo escolhido foi ${filter()}.`
+      /*data.pokemon[x].filter(tipocerto)
+      filter()
+      console.log(filter())
+   }
+   document.getElementById("filtrado").innerHTML= `O tipo escolhido foi ${filter()}.`
 
 
    document.getElementById("filtrado").innerHTML= `O tipo escolhido foi ${tipofil}.`
 }
-  // console.log(data.pokemon[0].type);
+console.log(data.pokemon[0].type);*/
 
 function filterWea(){
    let fraquesa = document.getElementById("filter-weakness").value;
@@ -142,47 +181,7 @@ function orderSea(){
    document.getElementById("filtrado").innerHTML= `A ordem escolhida foi ${ordem}.`
 }
 
-   
- /*  function filtraNome(pokemon) {
-      return (data.pokemon[pokemon].name === searchName)
-   }
-   filtraNome();
-   const caminho = data.pokemon[numeroDoIdDoPersonagem];
-   let box1 =`
-         <div class="coluna">
-         <img src=${caminho.img}>
-         <p class:"text">${caminho.name}</p>
-         </div>
-   `;
-      return box1; }
-
-function apresentaNome(){
-   let htmlCardsNome='';
-   for (let i = 0; i<data.pokemon.length; i++){
-      
-      htmlCardsNome+=pesquisar(i)
-}
-document.getElementById("pokes").innerHTML+= htmlCardsNome;
-}
-apresentaNome();
-data.pokemon.filter(filtraNome);
-console.log(data.pokemon.filter (filtraNome));
-console.log(searchName);
-alert(searchName);
-*/
-
-/*function maisQue100(pokemon) {
-   return (pokemons.type==Grass)
-}
-maisQue100();
-console.log(maisQue100);*/
 
 
-/*function tipoPlanta(pokemon) {
-   return (pokemon.tipo===planta)
-}
-tipoPlanta();
 
-meusPokemons.filter(tipoPlanta)
-console.log(filter());*/
 //console.log(example, data);
