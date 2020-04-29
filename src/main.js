@@ -7,7 +7,7 @@ import data from './data/pokemon/pokemon.js';
 
 //Botão topo
 
-/*
+
 window.onscroll = function () {
    scroll();
 }
@@ -20,9 +20,6 @@ function scroll() {
       btnTop.style.display = "none"
    }
 }
-
-*/
-
 
 
 
@@ -64,7 +61,7 @@ function scroll() {
       document.getElementById("pokes").style.display = "none";
    }
    function clearWeakness() {
-      document.getElementById("pokes").style.display = "none";
+      document.getElementById("pokes").style.display = "none"; 
    }
    function clearOrder() {
       document.getElementById("pokes").style.display = "none";
@@ -76,62 +73,49 @@ function scroll() {
    function searchName(event) {
       event.preventDefault();
       let nomePokemon = document.getElementById("name-pokemon").value;
-      document.getElementById("filtrado").innerHTML = `O nome digitado foi ${nomePokemon}.`
-      function agoravai2() {
-         //var nomesPokes = [data.pokemon[x].name];
-         function checkNames() {
-            return nomePokemon == data.pokemon[0].name;
+      function selectName(x) {
+         const nomes = data.pokemon[x].name;
+      function nomesPokes(nomes) {
+            return nomess == nomePokemon;
          }
-         function myFunction() {
-            document.getElementById("filtrado").innerHTML = data.pokemon[0].name.filter(checkNames);
-            console.log(nomePokemon);
-            console.log(data.pokemon[0].name.filter(checkNames));
+         if (nomes.includes(nomePokemon)) {
+            document.getElementById("filtrado").innerHTML += `
+      <div class="coluna">
+      <img src=${data.pokemon[x].img}>
+      <p class:"text">Nome:${data.pokemon[x].name}</p>
+      <p class:"text">Tipo:${data.pokemon[x].type}</p>
+      <p class:"text">Candy:${data.pokemon[x].candy}</p>
+      <p class:"text">Altura:${data.pokemon[x].height}</p>
+      <p class:"text">Peso:${data.pokemon[x].weight}</p>
+      <p class:"text">Fraqueza:${data.pokemon[x].weaknesses}</p>
+      <p class:"text">Evolução Anterior:${data.pokemon[x].prev_evolution}</p>
+      <p class:"text">Proxima evolução:${data.pokemon[x].next_evolution}</p>
+
+      </div>
+      `;
          }
-      } agoravai2();
+
+      }
+      function nomeNoHtml() {
+         let nomeCards = '';
+         for (let i = 0; i < data.pokemon.length; i++) {
+            nomeCards += selectName(i)
+         }
+      }
+      nomeNoHtml();
    }
+      
 
-
-   /*function filterItems(query) {
-      return nomesPokes.filter(function(el) {
-         return el.indexOf(query();
-      })
-   }
-   
-   console.log(filterItems('bu')); // ['apple', 'grapes']
-   console.log(filterItems('pi')); // ['banana', 'mango', 'orange']
-   }*/
-
-
-   /*function agoravai(x){
-         const tipos = [data.pokemon[0].type];
-         for(let tipo of tipos) {
-            console.log(tipo);
-            return tipo;
-         }}*/
 
    function filterType() {
       let tipofil = document.getElementById("filter-type").value;
-      // document.getElementById("filtrado").innerHTML= `O tipo escolhido foi ${tipofil}.`
 
-      /*let isso = data.pokemon.filter((nomedeles) => (
-            nomedeles.type === tipofil
-         )
-         );//console.log(isso);*/
-
-      function agoravai(x) {
-
+      function selectFilter(x) {
          const tipos = data.pokemon[x].type;
-         //for(let tipo of tipos) {
-
-         // document.getElementById("filtrado").innerHTML+= tipo;
-
-         function tipodotipo(tipos) {
+      function tipoDoTipo(tipos) {
             return tipos == tipofil;
-
          }
-         //var filtered = [data.pokemon[x].type].filter(tipodotipo);
          console.log(tipos);
-         // console.log(tipo);
          console.log(tipos == tipofil);
          console.log("teste", tipos.includes(tipofil));
 
@@ -141,50 +125,61 @@ function scroll() {
       <img src=${data.pokemon[x].img}>
       <p class:"text">Nome:${data.pokemon[x].name}</p>
       <p class:"text">Tipo:${data.pokemon[x].type}</p>
+      <p class:"text">Candy:${data.pokemon[x].candy}</p>
+      <p class:"text">Altura:${data.pokemon[x].height}</p>
+      <p class:"text">Peso:${data.pokemon[x].weight}</p>
+      <p class:"text">Fraqueza:${data.pokemon[x].weaknesses}</p>
+      <p class:"text">Evolução Anterior:${data.pokemon[x].prev_evolution}</p>
+      <p class:"text">Proxima evolução:${data.pokemon[x].next_evolution}</p>
+
       </div>
       `;
-            //console.log(`Você escolheu o tipo ${tipofil}`);
-         } else {
-            console.log("Não temos pokemon desse tipo");
          }
-         //console.log(filtered);
-         //console.log(tipos = tipofil);
-         //}
 
       }
       function tipoNoHtml() {
          let tipoCards = '';
          for (let i = 0; i < data.pokemon.length; i++) {
-            tipoCards += agoravai(i)
+            tipoCards += selectFilter(i)
          }
-         //document.getElementById("filtrado").innerHTML+= tipoCards;
-         //console.log(tipoCards);
       }
       tipoNoHtml();
-
-      /*function tipocerto(x) {
-            return (data.pokemon[x].type=== tipofil)
-      }
-      tipocerto();*/
-      //console.log(Object.keys(tipocerto));
-      //console.log(tipocerto);
-
    }
-   /*data.pokemon[x].filter(tipocerto)
-   filter()
-   console.log(filter())
-   }
-   document.getElementById("filtrado").innerHTML= `O tipo escolhido foi ${filter()}.`
-   
-   
-   document.getElementById("filtrado").innerHTML= `O tipo escolhido foi ${tipofil}.`
-   }
-   console.log(data.pokemon[0].type);*/
 
    function filterWea() {
-      let fraquesa = document.getElementById("filter-weakness").value;
-      document.getElementById("filtrado").innerHTML = `A fraquesa escolhida foi ${fraquesa}.`
+      let fraquezaFil = document.getElementById("filter-weakness").value;
+      function selectWeak(x) {
+         const fraquezas = data.pokemon[x].weaknesses;
+      function tipoDeFraque(fraquezas) {
+         return fuaquezas == fraquezaFil;
+      }
+      
+      if (fraquezas.includes(fraquezaFil)) {
+         document.getElementById("filtrado").innerHTML += `
+   <div class="coluna">
+   <img src=${data.pokemon[x].img}>
+   <p class:"text">Nome:${data.pokemon[x].name}</p>
+   <p class:"text">Tipo:${data.pokemon[x].type}</p>
+   <p class:"text">Candy:${data.pokemon[x].candy}</p>
+   <p class:"text">Altura:${data.pokemon[x].height}</p>
+   <p class:"text">Peso:${data.pokemon[x].weight}</p>
+   <p class:"text">Fraqueza:${data.pokemon[x].weaknesses}</p>
+   <p class:"text">Evolução Anterior:${data.pokemon[x].prev_evolution}</p>
+   <p class:"text">Proxima evolução:${data.pokemon[x].next_evolution}</p>
+   </div>
+   `;
+      }
+
    }
+   function fraquezaNoHtml() {
+      let fraquezaCards = '';
+      for (let i = 0; i < data.pokemon.length; i++) {
+         fraquezaCards += selectWeak(i)
+      }
+   }
+   fraquezaNoHtml();
+}
+
    function orderSea() {
       let ordem = document.getElementById("order-search").value;
       document.getElementById("filtrado").innerHTML = `A ordem escolhida foi ${ordem}.`
