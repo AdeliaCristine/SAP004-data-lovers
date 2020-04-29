@@ -55,30 +55,15 @@ function scroll() {
    function clearSearch(event) {
       event.preventDefault();
       document.getElementById("pokes").style.display = "none";
-      document.getElementById("filter-type").value="";
-      document.getElementById("filter-weakness").value="";
-      document.getElementById("order-search").value="";
    }
    function clearType() {
       document.getElementById("pokes").style.display = "none";
-      document.getElementById("filtrado").value="";
-      document.getElementById("test-pesq").value="";
-      document.getElementById("filter-weakness").value="";
-      document.getElementById("order-search").value="";
    }
    function clearWeakness() {
-      document.getElementById("pokes").style.display = "none";
-      document.getElementById("filtrado").value="";
-      document.getElementById("test-pesq").value="";
-      document.getElementById("filter-type").value="";
-      document.getElementById("order-search").value="";
+      document.getElementById("pokes").style.display = "none"; 
    }
    function clearOrder() {
       document.getElementById("pokes").style.display = "none";
-      document.getElementById("filtrado").value="";
-      document.getElementById("test-pesq").value="";
-      document.getElementById("filter-weakness").value="";
-      document.getElementById("filter-type").value="";
    }
    /*function vertodos(){
    document.getElementById("pokes").style.display="block"; 
