@@ -22,11 +22,9 @@ function scroll() {
 }
 
 function backTotop(){
-document.documentElement.scrollTop= 50;
+document.documentElement.scrollTop= 0;
+
 }
-
-document.getElementById("btn-top").addEventListener(onclick,backTotop)
-
 
 
    function pokemonImage(numeroDoIdDoPersonagem) {
@@ -57,6 +55,8 @@ document.getElementById("btn-top").addEventListener(onclick,backTotop)
    document.getElementById("filter-type").addEventListener("change", filterType);
    document.getElementById("filter-weakness").addEventListener("change", filterWea);
    document.getElementById("order-search").addEventListener("change", orderSea);
+
+   document.getElementById("btn-top").addEventListener(click,backTotop);
    //document.getElementById("btn-top-all").addEventListener("click", vertodos);
 
    function clearSearch(event) {
