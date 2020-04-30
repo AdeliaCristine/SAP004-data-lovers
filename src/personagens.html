@@ -12,6 +12,7 @@
    <!-- <div id="root"></div>-->
   
     <header>
+        <button id="home" class="btn-home"><a href="index.html">Tela inicial </a></button><br/>
         <article id="poke" data-columns="3" data-index-number="12314" data-parent="cars">
         </article>
 
@@ -73,6 +74,8 @@
                     <option id="size" value="size"> Tamanho</option>
                     </select>
                     <button id="play" class="btn-play"> <a href="https://www.pokemongo.com/pt-pt/" target="_blank">Ir para Jogo</a> </button>       
+                    
+                       
                 </ul>
                 </section>
     </form>
@@ -81,10 +84,11 @@
 <main>
 <p id="filtrado"></p>
 <div id="pokes" class="row" ></div>
-<button id="btn-top" class="btn-top"><a href="personagens.html">Ver Todos</button>
-<button id="btn-top-all" class="btn-top-all"> Ver Todos</a> </button>
-<button id="home" class="btn-home"><a href="index.html">Tela inicial</button>
+    <button id="btn-top-all" class="btn-top-all"><a href="personagens.html">Ver Todos</button>
+
+
 </main>
+<button id="btn-top" class="btn-top" onclick="backToTop()" >Topo</button>
 <script src="main.js" type="module"></script>
 
 </body>

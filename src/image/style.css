@@ -19,6 +19,7 @@ body {
     font-size: 20px;
     border-radius: 5px;
     align-content: center;
+    
 }
 
 main {
@@ -37,7 +38,7 @@ main {
 .coluna {
     background-color: rgba(245, 245, 245, 0.664);
     align-content: center;
-    margin: 10px 10px 10px 10px;
+    margin: 10px;
     border-radius: 20px;
     float: left;
     width: 18%;
@@ -121,7 +122,7 @@ button {
 .btn-top-all {
 right: 20px;
 bottom: 20px;
-position: fixed;
+position: center;
 }
 #pokes {
     display: block;
