@@ -19,6 +19,7 @@ body {
     font-size: 20px;
     border-radius: 5px;
     align-content: center;
+    
 }
 
 main {
@@ -34,10 +35,10 @@ main {
     align-content: center;
 }
 
-.coluna {
+.column {
     background-color: rgba(245, 245, 245, 0.664);
     align-content: center;
-    margin: 10px 10px 10px 10px;
+    margin: 10px;
     border-radius: 20px;
     float: left;
     width: 18%;
@@ -118,10 +119,10 @@ button {
     position: fixed;
 }
 
-.btn-top-all {
+.btn-all {
 right: 20px;
 bottom: 20px;
-position: fixed;
+position: center;
 }
 #pokes {
     display: block;
@@ -136,7 +137,7 @@ position: fixed;
     clear: both;
     display: table;
 }
-#filtrado {
+#filtered {
     display:block
 }
 

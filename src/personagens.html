@@ -12,6 +12,7 @@
    <!-- <div id="root"></div>-->
   
     <header>
+        <button id="home" class="btn-home"><a href="index.html">Tela inicial </a></button><br/>
         <article id="poke" data-columns="3" data-index-number="12314" data-parent="cars">
         </article>
 
@@ -20,7 +21,7 @@
                 <ul>
                     <label for="name-pokemon" class="name-search">Faça sua busca aqui:</label>
                     <input type="text" id="name-pokemon" placeholder="Nome do Pokémon">
-                    <button id="test-pesq"><a href="#" class="ico-search">Pesquisar</a></button>
+                    <button id="search-text"><a href="#" class="ico-search">Pesquisar</a></button>
 
                     <label for="filter-type" class="filter-type"> Filtrar por:</label>
                     <select id="filter-type" class="filter-type">
@@ -73,21 +74,24 @@
                     <option id="size" value="size"> Tamanho</option>
                     </select>
                     <button id="play" class="btn-play"> <a href="https://www.pokemongo.com/pt-pt/" target="_blank">Ir para Jogo</a> </button>       
+                    
+                       
                 </ul>
                 </section>
     </form>
 </header>
 
 <main>
-<p id="filtrado"></p>
+<p id="filtered"></p>
 <div id="pokes" class="row" ></div>
-<button id="btn-top" class="btn-top"><a href="personagens.html">Ver Todos</button>
-<button id="btn-top-all" class="btn-top-all"> Ver Todos</a> </button>
-<button id="home" class="btn-home"><a href="index.html">Tela inicial</button>
+    <button id="btn-all" class="btn-all"><a href="personagens.html">Ver Todos</button>
+
+
 </main>
+<button id="btn-top" class="btn-top">Topo</button>
 <script src="main.js" type="module"></script>
 
 </body>
 
 
-</html
+</html>

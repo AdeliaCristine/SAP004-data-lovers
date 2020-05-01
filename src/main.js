@@ -4,6 +4,7 @@ import data from './data/pokemon/pokemon.js';
 
 
 
+
 //Botão topo
 
 
@@ -20,14 +21,18 @@ function scroll() {
    }
 }
 
+function backTotop(){
+document.documentElement.scrollTop= 0;
+
+}
 
 
    function pokemonImage(numeroDoIdDoPersonagem) {
-      const caminho = data.pokemon[numeroDoIdDoPersonagem];
+      const  way = data.pokemon[numeroDoIdDoPersonagem];
       let box = `
-      <div class="coluna">
-      <img src=${caminho.img}>
-      <p class:"text">${caminho.name}</p>
+      <div class="column">
+      <img src=${way.img}>
+      <p class:"text">${way.name}</p>
       </div>
 `;
       return box;
@@ -41,15 +46,18 @@ function scroll() {
       document.getElementById("pokes").innerHTML += htmlCards;
    }
    criaImagemNoHtml();
+   
 
-   document.getElementById("test-pesq").addEventListener("click", clearSearch);
+   document.getElementById("search-text").addEventListener("click", clearSearch);
    document.getElementById("filter-type").addEventListener("change", clearType);
    document.getElementById("filter-weakness").addEventListener("change", clearWeakness);
    document.getElementById("order-search").addEventListener("change", clearOrder);
-   document.getElementById("test-pesq").addEventListener("click", searchName);
+   document.getElementById("search-text").addEventListener("click", searchName);
    document.getElementById("filter-type").addEventListener("change", filterType);
    document.getElementById("filter-weakness").addEventListener("change", filterWea);
    document.getElementById("order-search").addEventListener("change", orderSea);
+
+   document.getElementById("btn-top").addEventListener(click,backTotop);
    //document.getElementById("btn-top-all").addEventListener("click", vertodos);
 
    function clearSearch(event) {
@@ -71,15 +79,15 @@ function scroll() {
 
    function searchName(event) {
       event.preventDefault();
-      let nomePokemon = document.getElementById("name-pokemon").value;
+      let PokemonName = document.getElementById("name-pokemon").value;
       function selectName(x) {
-         const nomes = data.pokemon[x].name;
-      function nomesPokes(nomes) {
-            return nomess == nomePokemon;
+         const names = data.pokemon[x].name;
+      function namesPokes(names) {
+            return names == PokemonName;
          }
-         if (nomes.includes(nomePokemon)) {
-            document.getElementById("filtrado").innerHTML += `
-      <div class="coluna">
+         if (names.includes(PokemonName)) {
+            document.getElementById("filtered").innerHTML += `
+      <div class="column">
       <img src=${data.pokemon[x].img}>
       <p class:"text">Nome:${data.pokemon[x].name}</p>
       <p class:"text">Tipo:${data.pokemon[x].type}</p>
@@ -96,9 +104,9 @@ function scroll() {
 
       }
       function nomeNoHtml() {
-         let nomeCards = '';
+         let nameCards = '';
          for (let i = 0; i < data.pokemon.length; i++) {
-            nomeCards += selectName(i)
+            nameCards += selectName(i)
          }
       }
       nomeNoHtml();
@@ -107,20 +115,20 @@ function scroll() {
 
 
    function filterType() {
-      let tipofil = document.getElementById("filter-type").value;
+      let filterType = document.getElementById("filter-type").value;
 
       function selectFilter(x) {
-         const tipos = data.pokemon[x].type;
-      function tipoDoTipo(tipos) {
-            return tipos == tipofil;
+         const types = data.pokemon[x].type;
+      function tipoDoTipo(types) {
+            return types == filterType;
          }
-         console.log(tipos);
-         console.log(tipos == tipofil);
-         console.log("teste", tipos.includes(tipofil));
+        // console.log(types);
+        // console.log(types == filterType);
+        // console.log("teste", types.includes(filterType));
 
-         if (tipos.includes(tipofil)) {
-            document.getElementById("filtrado").innerHTML += `
-      <div class="coluna">
+         if (types.includes(filterType)) {
+            document.getElementById("filtered").innerHTML += `
+      <div class="column">
       <img src=${data.pokemon[x].img}>
       <p class:"text">Nome:${data.pokemon[x].name}</p>
       <p class:"text">Tipo:${data.pokemon[x].type}</p>
@@ -137,25 +145,25 @@ function scroll() {
 
       }
       function tipoNoHtml() {
-         let tipoCards = '';
+         let typeCards = '';
          for (let i = 0; i < data.pokemon.length; i++) {
-            tipoCards += selectFilter(i)
+            typeCards += selectFilter(i)
          }
       }
       tipoNoHtml();
    }
 
    function filterWea() {
-      let fraquezaFil = document.getElementById("filter-weakness").value;
+      let weakFilter = document.getElementById("filter-weakness").value;
       function selectWeak(x) {
-         const fraquezas = data.pokemon[x].weaknesses;
-      function tipoDeFraque(fraquezas) {
-         return fuaquezas == fraquezaFil;
+         const weaknesses = data.pokemon[x].weaknesses;
+      function tipoDeFraque(weaknesses) {
+         return weaknesses == weakFilter;
       }
       
-      if (fraquezas.includes(fraquezaFil)) {
-         document.getElementById("filtrado").innerHTML += `
-   <div class="coluna">
+      if (weaknesses.includes(weakFilter)) {
+         document.getElementById("filtered").innerHTML += `
+   <div class="column">
    <img src=${data.pokemon[x].img}>
    <p class:"text">Nome:${data.pokemon[x].name}</p>
    <p class:"text">Tipo:${data.pokemon[x].type}</p>
@@ -171,17 +179,17 @@ function scroll() {
 
    }
    function fraquezaNoHtml() {
-      let fraquezaCards = '';
+      let weakCards = '';
       for (let i = 0; i < data.pokemon.length; i++) {
-         fraquezaCards += selectWeak(i)
+         weakCards += selectWeak(i)
       }
    }
    fraquezaNoHtml();
 }
 
    function orderSea() {
-      let ordem = document.getElementById("order-search").value;
-      document.getElementById("filtrado").innerHTML = `A ordem escolhida foi ${ordem}.`
+      let searchOrder = document.getElementById("order-search").value;
+      document.getElementById("filtered").innerHTML = `A ordem escolhida foi ${searchOrder}.`
    }
 
 
