@@ -35,7 +35,7 @@ main {
     align-content: center;
 }
 
-.coluna {
+.column {
     background-color: rgba(245, 245, 245, 0.664);
     align-content: center;
     margin: 10px;
@@ -119,7 +119,7 @@ button {
     position: fixed;
 }
 
-.btn-top-all {
+.btn-all {
 right: 20px;
 bottom: 20px;
 position: center;
@@ -137,7 +137,7 @@ position: center;
     clear: both;
     display: table;
 }
-#filtrado {
+#filtered {
     display:block
 }
 
