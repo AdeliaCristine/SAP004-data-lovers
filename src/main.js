@@ -27,10 +27,11 @@ document.documentElement.scrollTop= 0;
 }
 
 
+
    function pokemonImage(numeroDoIdDoPersonagem) {
       const  way = data.pokemon[numeroDoIdDoPersonagem];
       let box = `
-      <div class="column">
+      <div class="column pokemon" id="pokemon${way.id}" data-id="${way.id}" >
       <img src=${way.img}>
       <p class:"text">${way.name}</p>
       </div>
@@ -46,8 +47,43 @@ document.documentElement.scrollTop= 0;
       document.getElementById("pokes").innerHTML += htmlCards;
    }
    criaImagemNoHtml();
+
+
+   const pokemons = document.getElementsByClassName("pokemon");
+   for (const pokemon of pokemons){pokemon.addEventListener("click",function() {
+      const id = pokemon.getAttribute("data-id");
+      abrirModal(id-1)
+   });
+   }
+   function abrirModal(index) {
+      console.log(index);
+      let box2 = `
+      <div class="column" >
+      <img src=${data.pokemon[index].img}>
+      <p class:"text">${data.pokemon[index].name}</p>
+      <p class:"text">Tipo:${data.pokemon[index].type}</p>
+      <p class:"text">Candy:${data.pokemon[index].candy}</p>
+      <p class:"text">Altura:${data.pokemon[index].height}</p>
+      <p class:"text">Peso:${data.pokemon[index].weight}</p>
+      <p class:"text">Fraqueza:${data.pokemon[index].weaknesses}</p>
+      <p class:"text">Evolução Anterior:${data.pokemon[index].prev_evolution}</p>
+      <p class:"text">Proxima evolução:${data.pokemon[index].next_evolution}</p>
+      </div>`; 
+     let newpopup = window.open(
+         'popup.html',
+         'pagina',
+         "width=350, height=400, top=100, left=110, scrollbars=no " );
+         newpopup.document.write(box2);
+         
+     console.log(box2);
+   
+      return box2;
+      }
    
 
+   /*function mouseOut() {
+     document.getElementById("demo").style.color = "black";
+   }*/
    document.getElementById("search-text").addEventListener("click", clearSearch);
    document.getElementById("filter-type").addEventListener("change", clearType);
    document.getElementById("filter-weakness").addEventListener("change", clearWeakness);
@@ -56,8 +92,7 @@ document.documentElement.scrollTop= 0;
    document.getElementById("filter-type").addEventListener("change", filterType);
    document.getElementById("filter-weakness").addEventListener("change", filterWea);
    document.getElementById("order-search").addEventListener("change", orderSea);
-
-   document.getElementById("btn-top").addEventListener(click,backTotop);
+   //document.getElementById("btn-top").addEventListener(click,backTotop);
    //document.getElementById("btn-top-all").addEventListener("click", vertodos);
 
    function clearSearch(event) {
@@ -144,13 +179,16 @@ document.documentElement.scrollTop= 0;
          }
 
       }
+      
       function tipoNoHtml() {
          let typeCards = '';
          for (let i = 0; i < data.pokemon.length; i++) {
             typeCards += selectFilter(i)
          }
       }
+      document.getElementById("filtered").innerHTML ="";
       tipoNoHtml();
+
    }
 
    function filterWea() {
@@ -192,7 +230,7 @@ document.documentElement.scrollTop= 0;
       document.getElementById("filtered").innerHTML = `A ordem escolhida foi ${searchOrder}.`
    }
 
-
+   /*function type () {   // get name   // get all data by name   // clear dom   // show data }*/
 
 
 //console.log(example, data);
