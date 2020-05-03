@@ -69,21 +69,28 @@ document.documentElement.scrollTop= 0;
       <p class:"text">Evolução Anterior:${data.pokemon[index].prev_evolution}</p>
       <p class:"text">Proxima evolução:${data.pokemon[index].next_evolution}</p>
       </div>`; 
-     let newpopup = window.open(
-         'popup.html',
-         'pagina',
-         "width=350, height=400, top=100, left=110, scrollbars=no " );
-         newpopup.document.write(box2);
+      let modal = document.getElementById("myModal");
+      let span = document.getElementsByClassName("close")[0];
+      // When the user clicks the button, open the modal 
+      modal.style.display = "block";
+document.getElementById("modal1").innerHTML=box2;
+ // When the user clicks on <span> (x), close the modal
+   span.onclick = function() {
+   modal.style.display = "none";
+ }
+ 
+ // When the user clicks anywhere outside of the modal, close it
+   window.onclick = function(event) {
+   if (event.target == modal) {
+     modal.style.display = "none";
+   }
+ }
          
      console.log(box2);
    
       return box2;
       }
    
-
-   /*function mouseOut() {
-     document.getElementById("demo").style.color = "black";
-   }*/
    document.getElementById("search-text").addEventListener("click", clearSearch);
    document.getElementById("filter-type").addEventListener("change", clearType);
    document.getElementById("filter-weakness").addEventListener("change", clearWeakness);
@@ -92,8 +99,6 @@ document.documentElement.scrollTop= 0;
    document.getElementById("filter-type").addEventListener("change", filterType);
    document.getElementById("filter-weakness").addEventListener("change", filterWea);
    document.getElementById("order-search").addEventListener("change", orderSea);
-   //document.getElementById("btn-top").addEventListener(click,backTotop);
-   //document.getElementById("btn-top-all").addEventListener("click", vertodos);
 
    function clearSearch(event) {
       event.preventDefault();
@@ -108,9 +113,6 @@ document.documentElement.scrollTop= 0;
    function clearOrder() {
       document.getElementById("pokes").style.display = "none";
    }
-   /*function vertodos(){
-   document.getElementById("pokes").style.display="block"; 
-   }*/
 
    function searchName(event) {
       event.preventDefault();
@@ -124,15 +126,7 @@ document.documentElement.scrollTop= 0;
             document.getElementById("filtered").innerHTML += `
       <div class="column">
       <img src=${data.pokemon[x].img}>
-      <p class:"text">Nome:${data.pokemon[x].name}</p>
-      <p class:"text">Tipo:${data.pokemon[x].type}</p>
-      <p class:"text">Candy:${data.pokemon[x].candy}</p>
-      <p class:"text">Altura:${data.pokemon[x].height}</p>
-      <p class:"text">Peso:${data.pokemon[x].weight}</p>
-      <p class:"text">Fraqueza:${data.pokemon[x].weaknesses}</p>
-      <p class:"text">Evolução Anterior:${data.pokemon[x].prev_evolution}</p>
-      <p class:"text">Proxima evolução:${data.pokemon[x].next_evolution}</p>
-
+      <p class:"text">${data.pokemon[x].name}</p>
       </div>
       `;
          }
@@ -144,6 +138,7 @@ document.documentElement.scrollTop= 0;
             nameCards += selectName(i)
          }
       }
+      document.getElementById("filtered").innerHTML ="";
       nomeNoHtml();
    }
       
@@ -165,15 +160,7 @@ document.documentElement.scrollTop= 0;
             document.getElementById("filtered").innerHTML += `
       <div class="column">
       <img src=${data.pokemon[x].img}>
-      <p class:"text">Nome:${data.pokemon[x].name}</p>
-      <p class:"text">Tipo:${data.pokemon[x].type}</p>
-      <p class:"text">Candy:${data.pokemon[x].candy}</p>
-      <p class:"text">Altura:${data.pokemon[x].height}</p>
-      <p class:"text">Peso:${data.pokemon[x].weight}</p>
-      <p class:"text">Fraqueza:${data.pokemon[x].weaknesses}</p>
-      <p class:"text">Evolução Anterior:${data.pokemon[x].prev_evolution}</p>
-      <p class:"text">Proxima evolução:${data.pokemon[x].next_evolution}</p>
-
+      <p class:"text">${data.pokemon[x].name}</p>
       </div>
       `;
          }
@@ -203,14 +190,7 @@ document.documentElement.scrollTop= 0;
          document.getElementById("filtered").innerHTML += `
    <div class="column">
    <img src=${data.pokemon[x].img}>
-   <p class:"text">Nome:${data.pokemon[x].name}</p>
-   <p class:"text">Tipo:${data.pokemon[x].type}</p>
-   <p class:"text">Candy:${data.pokemon[x].candy}</p>
-   <p class:"text">Altura:${data.pokemon[x].height}</p>
-   <p class:"text">Peso:${data.pokemon[x].weight}</p>
-   <p class:"text">Fraqueza:${data.pokemon[x].weaknesses}</p>
-   <p class:"text">Evolução Anterior:${data.pokemon[x].prev_evolution}</p>
-   <p class:"text">Proxima evolução:${data.pokemon[x].next_evolution}</p>
+   <p class:"text">${data.pokemon[x].name}</p>
    </div>
    `;
       }
@@ -222,6 +202,7 @@ document.documentElement.scrollTop= 0;
          weakCards += selectWeak(i)
       }
    }
+   document.getElementById("filtered").innerHTML ="";
    fraquezaNoHtml();
 }
 
