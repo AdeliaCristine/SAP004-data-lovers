@@ -157,6 +157,7 @@ button {
     z-index: 1;
     /* Sit on top */
     padding-top: 100px;
+    padding-left: 500px;
     /* Location of the box */
     left: 0;
     top: 0;
