@@ -28,7 +28,7 @@ body {
     position: top;
 }
 
-main  {
+main {
     font-family: 'Bangers', cursive;
     width: 1000px;
     max-width: 85%;
@@ -42,21 +42,20 @@ main  {
     align-content: center;
 }
 
-.mainbox{
+.mainbox {
     font-family: 'Bangers', cursive;
     font: 50px;
     background-color: rgba(245, 245, 245, 0.664);
     align-content: center;
     margin: 10px;
     border-radius: 20px;
-        border-color: silver;
+    border-color: silver;
     float: center;
     width: 500px;
     height: auto;
     padding: 10px;
-    position: relative ;
+    position: relative;
 }
-
 
 .column {
     font-family: 'Bangers', cursive;
@@ -76,7 +75,6 @@ main  {
     border-color: silver;
     cursor: pointer;
 }
-
 
 .presentation {
     background-color: rgba(245, 245, 245, 0.5);
@@ -186,7 +184,6 @@ button {
     /* Sit on top */
     padding-top: 50px;
     padding-left: 450px;
-        
     /* Location of the box */
     left: 0;
     top: 0;
@@ -210,8 +207,6 @@ button {
     position: center;
     object-position: center;
     align-items: center;
-   
-    
 }
 
 /* The Close Button */
