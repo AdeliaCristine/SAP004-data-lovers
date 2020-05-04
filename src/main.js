@@ -20,11 +20,12 @@ function scroll() {
       btnTop.style.display = "none"
    }
 }
-function backToTop() {
-   document.documentElement.scrollTop = 0;
+
+function backTotop(){
+document.documentElement.scrollTop= 0;
+
 }
-document.reload = false
-document.getElementById("btn-top").addEventListener("click", backToTop);
+
 
 
    function pokemonImage(numeroDoIdDoPersonagem) {
@@ -65,7 +66,7 @@ document.getElementById("btn-top").addEventListener("click", backToTop);
       <p class:"text">Altura:${data.pokemon[index].height}</p>
       <p class:"text">Peso:${data.pokemon[index].weight}</p>
       <p class:"text">Fraqueza:${data.pokemon[index].weaknesses}</p>
-      <p class:"text">Evolução Anterior:${data.pokemon[index].prev_evolution[1]}</p>
+      <p class:"text">Evolução Anterior:${data.pokemon[index].prev_evolution}</p>
       <p class:"text">Proxima evolução:${data.pokemon[index].next_evolution}</p>
       </div>`; 
       let modal = document.getElementById("myModal");
@@ -122,7 +123,7 @@ document.getElementById("btn-top").addEventListener("click", backToTop);
          }
          if (names.includes(PokemonName)) {
             document.getElementById("filtered").innerHTML += `
-      <div class="column">
+      <div class="column pokemon" id="pokemon${data.pokemon.id}" data-id="${data.pokemon.id}">
       <img src=${data.pokemon[x].img}>
       <p class:"text">${data.pokemon[x].name}</p>
       </div>
@@ -139,6 +140,8 @@ document.getElementById("btn-top").addEventListener("click", backToTop);
       document.getElementById("filtered").innerHTML ="";
       nomeNoHtml();
    }
+   
+   
    
       
 
