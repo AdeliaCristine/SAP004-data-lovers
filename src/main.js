@@ -14,17 +14,25 @@ window.onscroll = function () {
 
 function scroll() {
    let btnTop = document.getElementById("btn-top")
-   if (document.documentElement.scrollTop > 50) {
+   if (document.documentElement.scrollTop > 0) {
       btnTop.style.display = "block"
    } else {
       btnTop.style.display = "none"
    }
 }
 
-function backTotop(){
-document.documentElement.scrollTop= 0;
+/*function backToTop(){
+   //let reload = true
+document.documentElement.scrollTop= 0; 
+}*/
 
-}
+var scrollTop = function() {
+  
+   window.scrollTo(0, 0);
+}; 
+
+document.getElementById("btn-top").addEventListener("click", scrollTop);
+
 
 
 
@@ -214,6 +222,7 @@ document.documentElement.scrollTop= 0;
    }
 
    /*function type () {   // get name   // get all data by name   // clear dom   // show data }*/
+
 
 
 //console.log(example, data);
