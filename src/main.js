@@ -20,12 +20,13 @@ function scroll() {
       btnTop.style.display = "none"
    }
 }
+function backToTop() {
 
-function backTotop() {
    document.documentElement.scrollTop = 0;
 
 }
-
+document.reload = false
+document.getElementById("btn-top").addEventListener("click", backToTop);
 
 
 function pokemonImage(numeroDoIdDoPersonagem) {
