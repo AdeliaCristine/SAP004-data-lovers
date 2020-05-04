@@ -1,8 +1,8 @@
-import { example } from './data.js';
+import { searchFunc } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
-
+//console.log(filtro, data);
 
 
 //Botão topo
@@ -57,7 +57,7 @@ document.documentElement.scrollTop= 0;
    }
    function abrirModal(index) {
       //console.log(index);
-      let box2 = `
+      const box2 = `
       <div class="column" >
       <img src=${data.pokemon[index].img}>
       <p class:"text">${data.pokemon[index].name}</p>
@@ -94,8 +94,8 @@ document.documentElement.scrollTop= 0;
    document.getElementById("filter-type").addEventListener("change", clearType);
    document.getElementById("filter-weakness").addEventListener("change", clearWeakness);
    document.getElementById("order-search").addEventListener("change", clearOrder);
-   document.getElementById("search-text").addEventListener("click", searchName);
-   document.getElementById("filter-type").addEventListener("change", filterType);
+   //document.getElementById("search-text").addEventListener("click", searchName);
+  // document.getElementById("filter-type").addEventListener("change", filterType);
    document.getElementById("filter-weakness").addEventListener("change", filterWea);
    document.getElementById("order-search").addEventListener("change", orderSea);
 
@@ -113,7 +113,7 @@ document.documentElement.scrollTop= 0;
       document.getElementById("pokes").style.display = "none";
    }
 
-   function searchName(event) {
+   /*function searchName(event) {
       event.preventDefault();
       let PokemonName = document.getElementById("name-pokemon").value;
       function selectName(x) {
@@ -123,7 +123,7 @@ document.documentElement.scrollTop= 0;
          }
          if (names.includes(PokemonName)) {
             document.getElementById("filtered").innerHTML += `
-      <div class="column pokemon" id="pokemon${data.pokemon.id}" data-id="${data.pokemon.id}">
+      <div class="column teste" id="pokemon${data.pokemon.id}" data-id="${data.pokemon.id}">
       <img src=${data.pokemon[x].img}>
       <p class:"text">${data.pokemon[x].name}</p>
       </div>
@@ -139,14 +139,12 @@ document.documentElement.scrollTop= 0;
       }
       document.getElementById("filtered").innerHTML ="";
       nomeNoHtml();
-   }
-   
-   
+   }*/
    
       
 
 
-   function filterType() {
+  /* function filterType() {
       let filterType = document.getElementById("filter-type").value;
 
       function selectFilter(x) {
@@ -178,7 +176,7 @@ document.documentElement.scrollTop= 0;
       document.getElementById("filtered").innerHTML ="";
       tipoNoHtml();
 
-   }
+   }*/
 
    function filterWea() {
       let weakFilter = document.getElementById("filter-weakness").value;
