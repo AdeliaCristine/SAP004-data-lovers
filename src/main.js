@@ -54,7 +54,7 @@ function criaImagemNoHtml() {
 }
 criaImagemNoHtml();
 
-
+function rodarModal(){
 const pokemons = document.getElementsByClassName("pokemon");
 for (const pokemon of pokemons) {
    pokemon.addEventListener("click", function () {
@@ -62,6 +62,8 @@ for (const pokemon of pokemons) {
       abrirModal(id - 1)
    });
 }
+}
+rodarModal();
 function abrirModal(index) {
    //console.log(index);
    let box2 = `
@@ -73,9 +75,10 @@ function abrirModal(index) {
       <p class:"text">Altura:${data.pokemon[index].height}</p>
       <p class:"text">Peso:${data.pokemon[index].weight}</p>
       <p class:"text">Fraqueza:${data.pokemon[index].weaknesses}</p>
-      <p class:"text">Evolução Anterior:${data.pokemon[index].prev_evolution}</p>
-      <p class:"text">Proxima evolução:${data.pokemon[index].next_evolution}</p>
-      </div>`;
+      <p class:"text">Evolução Anterior:${data.pokemon[index].prev_evolution[0].name}</p>
+      <p class:"text">Proxima evolução:${data.pokemon[index].next_evolution[0].name}</p>
+      </div>`
+
    let modal = document.getElementById("myModal");
    let span = document.getElementsByClassName("close")[0];
    // When the user clicks the button, open the modal 
@@ -153,29 +156,19 @@ function searchName(event) {
 
 
 
-function filterType() {
+function filterType(x) {
    let filterType = document.getElementById("filter-type").value;
-
    function selectFilter(x) {
       const types = data.pokemon[x].type;
-      function tipoDoTipo(types) {
-         return types == filterType;
-      }
-      // console.log(types);
-      // console.log(types == filterType);
-      // console.log("teste", types.includes(filterType));
-
       if (types.includes(filterType)) {
          document.getElementById("filtered").innerHTML += `
-      <div class="column">
+      <div class="column pokemon" id="pokemon${data.pokemon[x].id}" data-id="${data.pokemon[x].id}">
       <img src=${data.pokemon[x].img}>
       <p class:"text">${data.pokemon[x].name}</p>
       </div>
       `;
       }
-
    }
-
    function tipoNoHtml() {
       let typeCards = '';
       for (let i = 0; i < data.pokemon.length; i++) {
@@ -184,17 +177,14 @@ function filterType() {
    }
    document.getElementById("filtered").innerHTML = "";
    tipoNoHtml();
-
+   rodarModal();
 }
+
 
 function filterWea() {
    let weakFilter = document.getElementById("filter-weakness").value;
    function selectWeak(x) {
       const weaknesses = data.pokemon[x].weaknesses;
-      function tipoDeFraque(weaknesses) {
-         return weaknesses == weakFilter;
-      }
-
       if (weaknesses.includes(weakFilter)) {
          document.getElementById("filtered").innerHTML += `
    <div class="column">
@@ -203,7 +193,6 @@ function filterWea() {
    </div>
    `;
       }
-
    }
    function fraquezaNoHtml() {
       let weakCards = '';
