@@ -21,10 +21,13 @@ function scroll() {
    }
 }
 
-function backTotop(){
+function backToTop(){
+   //let reload = true
 document.documentElement.scrollTop= 0;
-
 }
+
+document.getElementById("btn-top").addEventListener("click", backToTop);
+
 
 
 

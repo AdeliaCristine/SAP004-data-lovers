@@ -42,20 +42,6 @@ main {
     align-content: center;
 }
 
-.mainbox {
-    font-family: 'Bangers', cursive;
-    font: 50px;
-    background-color: rgba(245, 245, 245, 0.664);
-    align-content: center;
-    margin: 10px;
-    border-radius: 20px;
-    border-color: silver;
-    float: center;
-    width: 500px;
-    height: auto;
-    padding: 10px;
-    position: relative;
-}
 
 .column {
     font-family: 'Bangers', cursive;
