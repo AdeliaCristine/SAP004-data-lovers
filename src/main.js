@@ -22,15 +22,15 @@ function scroll() {
 }
 
 /*function backToTop(){
-   //let reload = true
+   //let reload = false
 document.documentElement.scrollTop= 0; 
 }*/
 
-var scrollTop = function () {
+var scrollTop = function (evt) {
+   evt.preventDefault();
    window.scrollTo(0, 0);
 };
 document.getElementById("btn-top").addEventListener("click", scrollTop);
-
 
 
 
