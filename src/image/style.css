@@ -5,13 +5,26 @@ html {
 
 body {
     background-image: url("fundoceu.jpeg");
-    text-align: center;
+    /* text-align: center;*/
     background-attachment: fixed;
     background-repeat: no-repeat;
     /* faz com a imagem não repita, apareça uma única vez. */
     background-size: cover;
     /* pra imagem ficar na tela toda. */
 }
+
+/*.presentation {
+    block-size: 1000px;
+    display: unset;
+    flex-wrap: wrap;
+    position: center;
+    width: 500px;
+    height: 300px;
+    border-radius: 20px;
+    border-color: silver;
+    padding: 5px;
+    
+}*/
 
 .search-form {
     font-family: 'Bangers', cursive;
@@ -41,7 +54,6 @@ main {
     padding: 5px;
     align-content: center;
 }
-
 
 .column {
     font-family: 'Bangers', cursive;
@@ -77,8 +89,9 @@ main {
 
 h1 {
     font-family: 'Bangers', cursive;
-    font-size: 50px;
-    color: rgb(231, 203, 45);
+    font-size: 45px;
+    color: whitesmoke;
+    font-weight: 600;
 }
 
 a:link {

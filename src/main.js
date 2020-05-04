@@ -14,19 +14,24 @@ window.onscroll = function () {
 
 function scroll() {
    let btnTop = document.getElementById("btn-top")
-   if (document.documentElement.scrollTop > 50) {
+   if (document.documentElement.scrollTop > 0) {
       btnTop.style.display = "block"
    } else {
       btnTop.style.display = "none"
    }
 }
 
-function backToTop(){
+/*function backToTop(){
    //let reload = true
-document.documentElement.scrollTop= 0;
-}
+document.documentElement.scrollTop= 0; 
+}*/
 
-document.getElementById("btn-top").addEventListener("click", backToTop);
+var scrollTop = function() {
+  
+   window.scrollTo(0, 0);
+}; 
+
+document.getElementById("btn-top").addEventListener("click", scrollTop);
 
 
 
@@ -217,6 +222,7 @@ document.getElementById("btn-top").addEventListener("click", backToTop);
    }
 
    /*function type () {   // get name   // get all data by name   // clear dom   // show data }*/
+
 
 
 //console.log(example, data);
