@@ -156,20 +156,11 @@ button {
     position: center;
 }
 
-#pokes {
-    display: block;
-}
 
 .img {
     display: block;
     text-align: center;
     position: absolute;
-}
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
 }
 
 #filtered {

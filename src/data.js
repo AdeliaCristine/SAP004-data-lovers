@@ -7,10 +7,10 @@ export const example = () => {}
 function rodarModal(){
 const pokemons = document.getElementsByClassName("pokemon");
 for (const pokemon of pokemons) {
-   pokemon.addEventListener("click", function () {
+    pokemon.addEventListener("click", function () {
       const id = pokemon.getAttribute("data-id");
       abrirModal(id - 1)
-   });
+    });
 }
 }
 rodarModal();
@@ -24,10 +24,8 @@ function abrirModal(index) {
       <p class:"text">Altura:${pokemon.pokemon[index].height}</p>
       <p class:"text">Peso:${pokemon.pokemon[index].weight}</p>
       <p class:"text">Fraqueza:${pokemon.pokemon[index].weaknesses}</p>
-
-      <p class:"text">Evolução Anterior:${pokemon.pokemon[index].prev_evolution}</p>
-      <p class:"text">Proxima evolução:${pokemon.pokemon[index].next_evolution}</p>
-      <p id = evolution></p>
+      <p class:"text">Evolução Anterior:${caminho.prev_evolution ? caminho.prev_evolution[0].name : "Não tem evolução"}</p>
+      <p class:"text">Proxima Evolução:${caminho.next_evolution ? caminho.next_evolution[0].name : "Não tem evolução"}</p>
       </div>`
       let modal = document.getElementById("myModal");
       let span = document.getElementsByClassName("close")[0];
@@ -72,8 +70,6 @@ document.getElementById("search-text").onclick = function() {searchName(event).p
   nomeNoHtml();
   rodarModal();
 }
-
-
 // função filtrar por tipo
 document.getElementById("filter-type").onchange = function(){filterType()};
 function filterType() {
@@ -131,16 +127,17 @@ document.getElementById("order-search").onchange = function() {myFunction()};
 function myFunction() {
   let searchOrder = document.getElementById("order-search").value;
   function selectOrder(x) {
-    const ordemNames = pokemon.pokemon[x].name;
-    const ordenando = ordemNames.toUpperCase(); 
-    ordemNames.forEach(name => {
+    const ordemNames = pokemon.pokemon.sort();
+    //const ordenando = ordemNames.toUpperCase(); 
+   // ordemNames.forEach(name => {
       
-    });
-    //for (const ordem of ordemNames) {
-      console.log(ordem);
-      console.log(ordemNames);
-    //return ordenando.sort();  diz que não é uma função
-     // if (ordem.includes(ordenando)) {
+    //});
+    //console.log(ordenando.map(ordemNome => ordemNome.length));
+    for (const ordem of ordenando) {
+      //console.log(ordem);
+      console.log(ordemNames);}
+  //return ordemNames.sort();  diz que não é uma função
+     //if (ordem.includes(ordenando)) {
         document.getElementById("filtered").innerHTML += `
         <div class="column pokemon" id="pokemon${pokemon.pokemon[x].id}" data-id="${pokemon.pokemon[x].id}">
         <img src=${pokemon.pokemon[x].img}>
