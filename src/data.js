@@ -44,7 +44,7 @@ function abrirModal(index) {
 
 
 // função pesquisar por nome
-document.getElementById("search-text").onclick = function() {searchName(event).preventDefault();};
+document.getElementById("name-pokemon").oninput = function() {searchName(event).preventDefault();};
   function searchName (){
   let pokesName = document.getElementById("name-pokemon").value;
   const pokemonName = pokesName.toUpperCase();

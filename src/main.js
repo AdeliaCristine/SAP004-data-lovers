@@ -14,26 +14,13 @@ function scroll() {
       btnTop.style.display = "none"
    }
 }
-<<<<<<< HEAD
 
-/*function backToTop(){
-   //let reload = false
-document.documentElement.scrollTop= 0; 
-}*/
-
-=======
->>>>>>> 4f1e68cf42d40e71c93b8e9b9757f17b87e0599b
 var scrollTop = function (evt) {
    evt.preventDefault();
    window.scrollTo(0, 0);
 };
 document.getElementById("btn-top").addEventListener("click", scrollTop);
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 4f1e68cf42d40e71c93b8e9b9757f17b87e0599b
 function pokemonImage(numeroDoIdDoPersonagem) {
    const way = data.pokemon[numeroDoIdDoPersonagem];
    let box = `
