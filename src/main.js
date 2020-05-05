@@ -50,12 +50,12 @@ function criaImagemNoHtml() {
 
       htmlCards += pokemonImage(i)
    }
-   document.getElementById("pokes").innerHTML += htmlCards;
+   document.getElementById("filtered").innerHTML += htmlCards; // tirei o pokes e deixei o filtered não esquecer de mudar no html e css
 }
 criaImagemNoHtml();
-
-function rodarModal(){
 const pokemons = document.getElementsByClassName("pokemon");
+function rodarModal(){
+//const pokemons = document.getElementsByClassName("pokemon");
 for (const pokemon of pokemons) {
    pokemon.addEventListener("click", function () {
       const id = pokemon.getAttribute("data-id");
@@ -75,10 +75,31 @@ function abrirModal(index) {
       <p class:"text">Altura:${data.pokemon[index].height}</p>
       <p class:"text">Peso:${data.pokemon[index].weight}</p>
       <p class:"text">Fraqueza:${data.pokemon[index].weaknesses}</p>
-      <p class:"text">Evolução Anterior:${data.pokemon[index].prev_evolution[0].name}</p>
-      <p class:"text">Proxima evolução:${data.pokemon[index].next_evolution[0].name}</p>
+
+      <p class:"text">Evolução Anterior:${data.pokemon[index].prev_evolution}</p>
+      <p class:"text">Proxima evolução:${data.pokemon[index].next_evolution}</p>
+      <p id = evolution></p>
       </div>`
 
+      //const escolhido = Bulbasaur;
+      /*var clicou = data.pokemon.prev_evolution;
+      if (pokemons.includes(clicou)){ //var str = 'algum texto'; if(str.match(/texto/)){   alert('string encontrada'); }
+      document.getElementById("evolution")=innerHTML= data.pokemon[index].prev_evolution[0].name
+
+      //`<p class:"text">Evolução Anterior:${data.pokemon[index].prev_evolution[0].name}</p>`
+      console.log(prev_evolution);
+      console.log(escolhido);
+      console.log(clicou);
+   } 
+   else if (clicou.includes(pokemons)){
+      document.getElementById("evolution")=innerHTML= data.pokemon[index].next_evolution[0].name
+     // `<p class:"text">Proxima evolução:${data.pokemon[index].next_evolution[0].name}</p>`
+
+   }else {
+      console.log ("não apresenta nada");
+   }*/
+
+   
    let modal = document.getElementById("myModal");
    let span = document.getElementsByClassName("close")[0];
    // When the user clicks the button, open the modal 
@@ -100,117 +121,7 @@ function abrirModal(index) {
    return box2;
 }
 
-document.getElementById("search-text").addEventListener("click", clearSearch);
-document.getElementById("filter-type").addEventListener("change", clearType);
-document.getElementById("filter-weakness").addEventListener("change", clearWeakness);
-document.getElementById("order-search").addEventListener("change", clearOrder);
-document.getElementById("search-text").addEventListener("click", searchName);
-document.getElementById("filter-type").addEventListener("change", filterType);
-document.getElementById("filter-weakness").addEventListener("change", filterWea);
-document.getElementById("order-search").addEventListener("change", orderSea);
-
-function clearSearch(event) {
-   event.preventDefault();
-   document.getElementById("pokes").style.display = "none";
-}
-function clearType() {
-   document.getElementById("pokes").style.display = "none";
-}
-function clearWeakness() {
-   document.getElementById("pokes").style.display = "none";
-}
-function clearOrder() {
-   document.getElementById("pokes").style.display = "none";
-}
-
-function searchName(event) {
-   event.preventDefault();
-   let PokemonName = document.getElementById("name-pokemon").value;
-   function selectName(x) {
-      const names = data.pokemon[x].name;
-      function namesPokes(names) {
-         return names == PokemonName;
-      }
-      if (names.includes(PokemonName)) {
-         document.getElementById("filtered").innerHTML += `
-      <div class="column pokemon" id="pokemon${data.pokemon.id}" data-id="${data.pokemon.id}">
-      <img src=${data.pokemon[x].img}>
-      <p class:"text">${data.pokemon[x].name}</p>
-      </div>
-      `;
-      }
-
-   }
-   function nomeNoHtml() {
-      let nameCards = '';
-      for (let i = 0; i < data.pokemon.length; i++) {
-         nameCards += selectName(i)
-      }
-   }
-   document.getElementById("filtered").innerHTML = "";
-   nomeNoHtml();
-}
-
-
-
-
-
-
-function filterType(x) {
-   let filterType = document.getElementById("filter-type").value;
-   function selectFilter(x) {
-      const types = data.pokemon[x].type;
-      if (types.includes(filterType)) {
-         document.getElementById("filtered").innerHTML += `
-      <div class="column pokemon" id="pokemon${data.pokemon[x].id}" data-id="${data.pokemon[x].id}">
-      <img src=${data.pokemon[x].img}>
-      <p class:"text">${data.pokemon[x].name}</p>
-      </div>
-      `;
-      }
-   }
-   function tipoNoHtml() {
-      let typeCards = '';
-      for (let i = 0; i < data.pokemon.length; i++) {
-         typeCards += selectFilter(i)
-      }
-   }
-   document.getElementById("filtered").innerHTML = "";
-   tipoNoHtml();
-   rodarModal();
-}
-
-
-function filterWea() {
-   let weakFilter = document.getElementById("filter-weakness").value;
-   function selectWeak(x) {
-      const weaknesses = data.pokemon[x].weaknesses;
-      if (weaknesses.includes(weakFilter)) {
-         document.getElementById("filtered").innerHTML += `
-   <div class="column">
-   <img src=${data.pokemon[x].img}>
-   <p class:"text">${data.pokemon[x].name}</p>
-   </div>
-   `;
-      }
-   }
-   function fraquezaNoHtml() {
-      let weakCards = '';
-      for (let i = 0; i < data.pokemon.length; i++) {
-         weakCards += selectWeak(i)
-      }
-   }
-   document.getElementById("filtered").innerHTML = "";
-   fraquezaNoHtml();
-}
-
-function orderSea() {
-   let searchOrder = document.getElementById("order-search").value;
-   document.getElementById("filtered").innerHTML = `A ordem escolhida foi ${searchOrder}.`
-}
-
-/*function type () {   // get name   // get all data by name   // clear dom   // show data }*/
-
 
 
 //console.log(example, data);
+
