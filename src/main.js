@@ -14,11 +14,13 @@ function scroll() {
       btnTop.style.display = "none"
    }
 }
+
 var scrollTop = function (evt) {
    evt.preventDefault();
    window.scrollTo(0, 0);
 };
 document.getElementById("btn-top").addEventListener("click", scrollTop);
+
 function pokemonImage(numeroDoIdDoPersonagem) {
    const way = data.pokemon[numeroDoIdDoPersonagem];
    let box = `
