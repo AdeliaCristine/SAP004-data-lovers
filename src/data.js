@@ -15,15 +15,16 @@ for (const pokemon of pokemons) {
 }
 rodarModal();
 function abrirModal(index) {
+  const caminho = pokemon.pokemon[index]
    let box2 = `
       <div class="column" >
-      <img src=${pokemon.pokemon[index].img}>
-      <p class:"text">${pokemon.pokemon[index].name}</p>
-      <p class:"text">Tipo:${pokemon.pokemon[index].type}</p>
-      <p class:"text">Candy:${pokemon.pokemon[index].candy}</p>
-      <p class:"text">Altura:${pokemon.pokemon[index].height}</p>
-      <p class:"text">Peso:${pokemon.pokemon[index].weight}</p>
-      <p class:"text">Fraqueza:${pokemon.pokemon[index].weaknesses}</p>
+      <img src=${caminho[index].img}>
+      <p class:"text">${caminho[index].name}</p>
+      <p class:"text">Tipo:${caminho[index].type}</p>
+      <p class:"text">Candy:${caminho[index].candy}</p>
+      <p class:"text">Altura:${caminho[index].height}</p>
+      <p class:"text">Peso:${caminho[index].weight}</p>
+      <p class:"text">Fraqueza:${caminho[index].weaknesses}</p>
       <p class:"text">Evolução Anterior:${caminho.prev_evolution ? caminho.prev_evolution[0].name : "Não tem evolução"}</p>
       <p class:"text">Proxima Evolução:${caminho.next_evolution ? caminho.next_evolution[0].name : "Não tem evolução"}</p>
       </div>`
