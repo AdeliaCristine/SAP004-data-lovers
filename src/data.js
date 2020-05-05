@@ -18,13 +18,13 @@ function abrirModal(index) {
   const caminho = pokemon.pokemon[index]
    let box2 = `
       <div class="column" >
-      <img src=${caminho[index].img}>
-      <p class:"text">${caminho[index].name}</p>
-      <p class:"text">Tipo:${caminho[index].type}</p>
-      <p class:"text">Candy:${caminho[index].candy}</p>
-      <p class:"text">Altura:${caminho[index].height}</p>
-      <p class:"text">Peso:${caminho[index].weight}</p>
-      <p class:"text">Fraqueza:${caminho[index].weaknesses}</p>
+      <img src=${caminho.img}>
+      <p class:"text">${caminho.name}</p>
+      <p class:"text">Tipo:${caminho.type}</p>
+      <p class:"text">Candy:${caminho.candy}</p>
+      <p class:"text">Altura:${caminho.height}</p>
+      <p class:"text">Peso:${caminho.weight}</p>
+      <p class:"text">Fraqueza:${caminho.weaknesses}</p>
       <p class:"text">Evolução Anterior:${caminho.prev_evolution ? caminho.prev_evolution[0].name : "Não tem evolução"}</p>
       <p class:"text">Proxima Evolução:${caminho.next_evolution ? caminho.next_evolution[0].name : "Não tem evolução"}</p>
       </div>`
@@ -45,7 +45,7 @@ function abrirModal(index) {
 
 
 // função pesquisar por nome
-document.getElementById("name-pokemon").oninput = function() {searchName(event).preventDefault();};
+document.getElementById("name-pokemon").oninput = function() {searchName();};
   function searchName (){
   let pokesName = document.getElementById("name-pokemon").value;
   const pokemonName = pokesName.toUpperCase();
