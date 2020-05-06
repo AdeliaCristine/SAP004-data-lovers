@@ -124,39 +124,39 @@ function filterWea(){
 }
 
 //função ordenar
-document.getElementById("order-search").onchange = function() {myFunction()};
-function myFunction() {
-  let searchOrder = document.getElementById("order-search").value;
-  function selectOrder(x) {
-    const ordemNames = pokemon.pokemon.sort();
+//document.getElementById("order-search").onchange = function() {myFunction()};
+//function myFunction() {
+  //let searchOrder = document.getElementById("order-search").value;
+  //function selectOrder(x) {
+    //const ordemNames = pokemon.pokemon.sort();
     //const ordenando = ordemNames.toUpperCase(); 
    // ordemNames.forEach(name => {
       
     //});
     //console.log(ordenando.map(ordemNome => ordemNome.length));
-    for (const ordem of ordenando) {
+    //for (const ordem of ordenando) {
       //console.log(ordem);
-      console.log(ordemNames);}
+      //console.log(ordemNames);}
   //return ordemNames.sort();  diz que não é uma função
      //if (ordem.includes(ordenando)) {
-        document.getElementById("filtered").innerHTML += `
-        <div class="column pokemon" id="pokemon${pokemon.pokemon[x].id}" data-id="${pokemon.pokemon[x].id}">
-        <img src=${pokemon.pokemon[x].img}>
-        <p class:"text">${pokemon.pokemon[x].name}</p>
-        </div>
-        `;
-  }
+        //document.getElementById("filtered").innerHTML += `
+        //<div class="column pokemon" id="pokemon${pokemon.pokemon[x].id}" data-id="${pokemon.pokemon[x].id}">
+        //<img src=${pokemon.pokemon[x].img}>
+        //<p class:"text">${pokemon.pokemon[x].name}</p>
+        //</div>
+        //`;
+  //}
     
-  function ordemNoHtml() {
-      let orderCards = '';
-      for (let i = 0; i < pokemon.pokemon.length; i++) {
-        orderCards += selectOrder(i)
-      }
-  }
-  document.getElementById("filtered").innerHTML = "";
+  //function ordemNoHtml() {
+    //  let orderCards = '';
+      //for (let i = 0; i < pokemon.pokemon.length; i++) {
+        //orderCards += selectOrder(i)
+      //}
+  //}
+  //document.getElementById("filtered").innerHTML = "";
 
-  ordemNoHtml();
-}
+  //ordemNoHtml();
+//}
 
 /*let nomeDoPoke = pokemon.pokemon[0].name;
 const nomeDoPokemon= nomeDoPoke.toUpperCase();*/
@@ -201,3 +201,33 @@ function myFunction() {
   return 'OMG';
 };*/
 
+const orderAZ = (a, b) => a["name"].localeCompare(b["name"])
+const orderByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
+const orderSpawnChance = (a, b) => Number(a["order-spawn"]) - Number(b["order-spawn"])
+
+var searchOrder = document.getElementById("order-search").value
+var order = searchOrder
+
+document.getElementById("order-search").onchange = function() {orderSea()};
+function orderSea() {
+
+            orderPokes(order)
+      criaImagemNoHtml(pokemons);
+   }
+
+
+function orderPokes(data, order) {
+   switch (order) {
+      case "size":
+         data.sort(orderByHeight())
+         break
+
+      case "order-sprawn":
+         data.sort(orderSpawnChance())
+         break
+      case "order-az":
+         data.sort(orderAZ())
+         console.log(pokemons.sort(orderAZ))
+         break
+   }
+} 

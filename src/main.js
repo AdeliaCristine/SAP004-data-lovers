@@ -78,5 +78,3 @@ function abrirModal(index) {
    }
    return box2;
 }
-//console.log(example, data);
-
