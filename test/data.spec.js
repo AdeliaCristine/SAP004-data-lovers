@@ -1,5 +1,7 @@
 import { example, anotherExample } from '../src/data.js';
-
+ describe ('primeiroTeste()',() => {
+   it ('')
+ },
 
 describe('example', () => {
   it('is a function', () => {
@@ -9,7 +11,7 @@ describe('example', () => {
   it('returns `example`', () => {
     expect(example()).toBe('example');
   });
-});
+}),
 
 
 describe('anotherExample', () => {
@@ -20,4 +22,4 @@ describe('anotherExample', () => {
   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
   });
-});
+}))
