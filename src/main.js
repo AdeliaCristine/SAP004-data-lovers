@@ -80,3 +80,36 @@ function abrirModal(index) {
 }
 //console.log(example, data);
 
+
+//função ordenar Dai
+  /*
+const orderAZ = (a, b) => a["name"].localeCompare(b["name"])
+const orderByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
+const orderSpawnChance = (a, b) => Number(a["order-spawn"]) - Number(b["order-spawn"])
+
+var searchOrder = document.getElementById("order-search").value
+var order = searchOrder.value
+
+document.getElementById("order-search").onchange = function() {orderSea()};
+function orderSea() {
+
+            orderPokes(order)
+      criaImagemNoHtml(pokemons);
+   }
+
+
+function orderPokes(data, order) {
+   switch (order) {
+      case "size":
+         data.sort(orderByHeight())
+         break
+
+      case "order-sprawn":
+         data.sort(orderSpawnChance())
+         break
+      case "order-az":
+         data.sort(orderAZ())
+         console.log(pokemons.sort(orderAZ))
+         break
+   }
+} */
