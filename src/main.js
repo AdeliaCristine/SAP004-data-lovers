@@ -1,5 +1,5 @@
 import { orderPokes } from './data.js';
-//import { selectWeak } from './data.js';
+import { selectWeak } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -16,11 +16,12 @@ function scroll() {
    }
 }
 
-var scrollTop = function (evt) {
+ var scrollTop = function (evt) {
    evt.preventDefault();
    window.scrollTo(0, 0);
 };
-document.getElementById("btn-top").addEventListener("click", scrollTop);
+document.getElementById("btn-top").addEventListener("click", scrollTop); 
+
 
 function pokemonImage(numeroDoIdDoPersonagem, banco) {
    const way = banco[numeroDoIdDoPersonagem];
@@ -31,7 +32,11 @@ function pokemonImage(numeroDoIdDoPersonagem, banco) {
       </div>
 `;
    return box;
-}
+} 
+//pokemonImage.map ( criaImagemNoHtml)
+
+//console.log(pokemonImage.map ( criaImagemNoHtml))
+
 function criaImagemNoHtml() {
    let htmlCards = '';
    for (let i = 0; i < data.pokemon.length; i++) {
@@ -80,18 +85,21 @@ function abrirModal(index) {
    return box2;
 }
 
-  /*  let weakFilter = document.getElementById("filter-weakness")
+  // let weakFilter = document.getElementById("filter-weakness")
    document.getElementById("filter-weakness").onchange = function filterWea() {
-      const filtrado = selectWeak(weakFilter.value)
+      let weakFilter = document.getElementById("filter-weakness").value
       const htmlCards = document.getElementById("div-pokes")
+      /* const filtrado = selectWeak(weakFilter)
+      console.log(filtrado) */
+           //document.getElementById("div-pokes").innerHTML += 
       htmlCards.innerHTML = ""
       let template =""
       for (let i = 0; i < data.pokemon.length; i++) {
-         template += pokemonImage(i, filtrado)
+         template += pokemonImage(i, weakFilter)
       }
       htmlCards.innerHTML = template
       rodarModal()
-   } */
+   } 
 
 
 
@@ -108,5 +116,6 @@ document.getElementById("order-search").onchange = function () {
    htmlCards.innerHTML = template
    rodarModal()
 }
+
 
 

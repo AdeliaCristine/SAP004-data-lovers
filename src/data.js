@@ -97,19 +97,26 @@ document.getElementById("filter-type").onchange = function filterType(){
 }
 
 // função filtrar por fraqueza
-document.getElementById("filter-weakness").onchange = function filterWea() {
-let weakFilter = document.getElementById("filter-weakness").value;
- function selectWeak(x) {
-    var fraqueza = pokemon.pokemon[x].weaknesses;
+/* document.getElementById("filter-weakness").onchange = function filterWea() {
+let weakFilter = document.getElementById("filter-weakness").value; */
+  export function selectWeak() {
+    let weakFilter = document.getElementById("filter-weakness").value;
+    var fraqueza = way.id.weaknesses;
+    console.log(fraqueza)
+    console.log(weakFilter)
     if (fraqueza.includes(weakFilter)) {
-      document.getElementById("div-pokes").innerHTML += `
+       return
+       
+     } 
+    }
+      /* document.getElementById("div-pokes").innerHTML += `
       <div class="column pokemon" id="pokemon${pokemon.pokemon[x].id}" data-id="${pokemon.pokemon[x].id}">
       <img src=${pokemon.pokemon[x].img}>
       <p class:"text">${pokemon.pokemon[x].name}</p>
       </div>
       `; 
-      }
-    }
+      } */
+   /*  }
       function fraquezaNoHtml() {
         let weakCards = '';
         for (let i = 0; i < pokemon.pokemon.length; i++) {
@@ -119,7 +126,7 @@ let weakFilter = document.getElementById("filter-weakness").value;
       document.getElementById("div-pokes").innerHTML = "";
       fraquezaNoHtml();
       rodarModal();
-    }
+    } */
  
 
  
