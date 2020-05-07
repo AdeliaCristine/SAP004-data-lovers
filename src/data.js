@@ -80,7 +80,7 @@ document.getElementById("filter-type").onchange = function filterType(){
       document.getElementById("div-pokes").innerHTML += `
       <div class="column pokemon" id="pokemon${pokemon.pokemon[x].id}" data-id="${pokemon.pokemon[x].id}">
       <img src=${pokemon.pokemon[x].img}>
-      <p class:"text">${pokemon.pokemon[x].name}</p>
+      <p class="text">${pokemon.pokemon[x].name}</p>
       </div>
       `;
     }
@@ -97,26 +97,25 @@ document.getElementById("filter-type").onchange = function filterType(){
 }
 
 // função filtrar por fraqueza
-/* document.getElementById("filter-weakness").onchange = function filterWea() {
-let weakFilter = document.getElementById("filter-weakness").value; */
-  export function selectWeak() {
+//document.getElementById("filter-weakness").onchange = function filterWea() {
+//let weakFilter = document.getElementById("filter-weakness").value; 
+   export function selectWeak(x) {
     let weakFilter = document.getElementById("filter-weakness").value;
-    var fraqueza = way.id.weaknesses;
+    let fraqueza = pokemon.pokemon[x].weaknesses;
     console.log(fraqueza)
     console.log(weakFilter)
     if (fraqueza.includes(weakFilter)) {
-       return
-       
-     } 
+      return
     }
-      /* document.getElementById("div-pokes").innerHTML += `
+  }
+     /*  document.getElementById("div-pokes").innerHTML += `
       <div class="column pokemon" id="pokemon${pokemon.pokemon[x].id}" data-id="${pokemon.pokemon[x].id}">
       <img src=${pokemon.pokemon[x].img}>
       <p class:"text">${pokemon.pokemon[x].name}</p>
       </div>
       `; 
-      } */
-   /*  }
+      } 
+  }
       function fraquezaNoHtml() {
         let weakCards = '';
         for (let i = 0; i < pokemon.pokemon.length; i++) {
@@ -126,14 +125,14 @@ let weakFilter = document.getElementById("filter-weakness").value; */
       document.getElementById("div-pokes").innerHTML = "";
       fraquezaNoHtml();
       rodarModal();
-    } */
+} */
  
 
  
 
 
 //função ordenar
-var orderAZ = (a, b) => a["name"].localeCompare(b["name"])
+var orderAZ = (a, b) => (a["name"]).localeCompare(b["name"])
 var orderByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
 var orderSpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
 var caminho = pokemon.pokemon;
@@ -158,7 +157,3 @@ export function orderPokes(order) {
   }
 
 }
-
-
-
-
