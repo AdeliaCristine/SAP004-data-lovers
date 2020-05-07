@@ -9,13 +9,13 @@ function rodarModal() {
   for (const pokemon of pokemons) {
     pokemon.addEventListener("click", function () {
       const id = pokemon.getAttribute("data-id");
-      abrirModal(id - 1)
+      abrirModal(id)
     });
   }
 }
 rodarModal();
 function abrirModal(index) {
-  let caminho = pokemon.pokemon[index];
+  let caminho = pokemon.pokemon.find(pokemon => pokemon.id ==index)
   let box2 = `
       <div class="column" >
       <img src=${caminho.img}>
@@ -72,8 +72,7 @@ document.getElementById("name-pokemon").oninput = function() {searchName();};
   rodarModal();
 }
 // função filtrar por tipo
-document.getElementById("filter-type").onchange = function () { filterType() };
-function filterType() {
+document.getElementById("filter-type").onchange = function filterType(){
   let filterType = document.getElementById("filter-type").value;
   function selectFilter(x) {
     const types = pokemon.pokemon[x].type;
@@ -98,32 +97,32 @@ function filterType() {
 }
 
 // função filtrar por fraqueza
-document.getElementById("filter-weakness").onchange = function () { filterWea() };
-function filterWea() {
-  let weakFilter = document.getElementById("filter-weakness").value;
-  function selectWeak(x) {
-    const weaknesses = pokemon.pokemon[x].weaknesses;
-    if (weaknesses.includes(weakFilter)) {
+document.getElementById("filter-weakness").onchange = function filterWea() {
+let weakFilter = document.getElementById("filter-weakness").value;
+ function selectWeak(x) {
+    var fraqueza = pokemon.pokemon[x].weaknesses;
+    if (fraqueza.includes(weakFilter)) {
       document.getElementById("div-pokes").innerHTML += `
-        <div class="column pokemon" id="pokemon${pokemon.pokemon[x].id}" data-id="${pokemon.pokemon[x].id}">
-        <img src=${pokemon.pokemon[x].img}>
-        <p class:"text">${pokemon.pokemon[x].name}</p>
-        </div>
-        `;
+      <div class="column pokemon" id="pokemon${pokemon.pokemon[x].id}" data-id="${pokemon.pokemon[x].id}">
+      <img src=${pokemon.pokemon[x].img}>
+      <p class:"text">${pokemon.pokemon[x].name}</p>
+      </div>
+      `; 
+      }
     }
-  }
-  function fraquezaNoHtml() {
-    let weakCards = '';
-    for (let i = 0; i < pokemon.pokemon.length; i++) {
-      weakCards += selectWeak(i)
+      function fraquezaNoHtml() {
+        let weakCards = '';
+        for (let i = 0; i < pokemon.pokemon.length; i++) {
+          weakCards += selectWeak(i)
+        }
+      }
+      document.getElementById("div-pokes").innerHTML = "";
+      fraquezaNoHtml();
+      rodarModal();
     }
-  }
-  document.getElementById("div-pokes").innerHTML = "";
-  fraquezaNoHtml();
-  rodarModal();
-}
+ 
 
-
+ 
 
 
 //função ordenar

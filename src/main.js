@@ -1,4 +1,5 @@
 import { orderPokes } from './data.js';
+//import { selectWeak } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -45,13 +46,13 @@ function rodarModal() {
    for (const pokemon of pokemons) {
       pokemon.addEventListener("click", function () {
          const id = pokemon.getAttribute("data-id");
-         abrirModal(id -1)
+         abrirModal(id)
       });
    }
 }
 rodarModal();
 function abrirModal(index) {
-   const caminho = data.pokemon[index]
+   const caminho = data.pokemon.find(pokemon => pokemon.id == index)
    let box2 = `
       <div class="column" >
       <img src=${caminho.img}>
@@ -78,6 +79,22 @@ function abrirModal(index) {
    }
    return box2;
 }
+
+  /*  let weakFilter = document.getElementById("filter-weakness")
+   document.getElementById("filter-weakness").onchange = function filterWea() {
+      const filtrado = selectWeak(weakFilter.value)
+      const htmlCards = document.getElementById("div-pokes")
+      htmlCards.innerHTML = ""
+      let template =""
+      for (let i = 0; i < data.pokemon.length; i++) {
+         template += pokemonImage(i, filtrado)
+      }
+      htmlCards.innerHTML = template
+      rodarModal()
+   } */
+
+
+
 
 var searchOrder = document.getElementById("order-search")
 document.getElementById("order-search").onchange = function () {
