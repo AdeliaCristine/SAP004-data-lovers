@@ -1,5 +1,4 @@
-import { orderPokes, selectFilter, selectWeak } from './data.js';
-
+import {orderPokes, selectName, selectFilter, selectWeak} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 //Botão topo
@@ -14,24 +13,22 @@ function scroll() {
     btnTop.style.display = "none"
   }
 }
-
 let scrollTop = function (evt) {
   evt.preventDefault();
   window.scrollTo(0, 0);
 };
-document.getElementById("btn-top").addEventListener("click", scrollTop);
+document.getElementById("btn-top").addEventListener("onclick", scrollTop);
 
+function pokemonImage(numeroDoIdDoPersonagem, banco) {
+  const way = banco[numeroDoIdDoPersonagem];
 
-function pokemonImage(numeroDoIdDoPersonagem,banco ) {
- const way = banco[numeroDoIdDoPersonagem];
- 
   let box = `
       <div class="column pokemon" id="pokemon${way.id}" data-id="${way.id}" >
       <img src=${way.img}>
       <p class="text">${way.name}</p>
       </div>
 `;
-  return box ; 
+  return box;
 }
 
 function criaImagemNoHtml(teste) {
@@ -54,6 +51,7 @@ function rodarModal() {
   }
 }
 rodarModal();
+
 function abrirModal(index) {
   const caminho = data.pokemon.find(pokemon => pokemon.id == index)
   let box2 = `
@@ -82,19 +80,23 @@ function abrirModal(index) {
   }
   return box2;
 }
-
-
+//Nome
+document.getElementById("name-pokemon").oninput = function searchName() {
+  const htmlCards = document.getElementById("div-pokes") 
+  htmlCards.innerHTML = ""
+  const pesquisado = selectName(data.pokemon) 
+  criaImagemNoHtml(pesquisado) 
+  rodarModal()
+}
 
 // função filtrar por tipo
-document.getElementById("filter-type").onchange = function typeFilter(){
+document.getElementById("filter-type").onchange = function typeFilter() {
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
   const filtrado = selectFilter(data.pokemon)
   criaImagemNoHtml(filtrado)
-    rodarModal() }
-
-
-
+  rodarModal()
+}
 
 // função filtrar por fraquezas
 document.getElementById("filter-weakness").onchange = function filterWeak() {
@@ -102,12 +104,8 @@ document.getElementById("filter-weakness").onchange = function filterWeak() {
   htmlCards.innerHTML = ""
   const filtrado = selectWeak(data.pokemon)
   criaImagemNoHtml(filtrado)
-  //console.log(filtrado)
   rodarModal()
 }
-
-
-
 
 let searchOrder = document.getElementById("order-search")
 document.getElementById("order-search").onchange = function () {
@@ -121,6 +119,3 @@ document.getElementById("order-search").onchange = function () {
   htmlCards.innerHTML = template
   rodarModal()
 }
-
-
-
