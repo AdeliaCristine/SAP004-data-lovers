@@ -72,7 +72,7 @@ document.getElementById("name-pokemon").oninput = function() {searchName();};
   rodarModal();
 }
 // função filtrar por tipo
-document.getElementById("filter-type").onchange = function filterType(){
+document.getElementById("filter-type").onchange = function typeFilter(){
   let filterType = document.getElementById("filter-type").value;
   function selectFilter(x) {
     const types = pokemon.pokemon[x].type;
@@ -84,7 +84,16 @@ document.getElementById("filter-type").onchange = function filterType(){
       </div>
       `;
     }
-  }
+    let tamanho =types.includes(filterType)
+    console.log(types.includes(filterType))
+    if ( tamanho == true){
+      console.log("usar")
+    }
+      else {
+        console.log("não usar")
+      }
+    }
+    
   function tipoNoHtml() {
     let typeCards = '';
     for (let i = 0; i < pokemon.pokemon.length; i++) {
@@ -97,17 +106,38 @@ document.getElementById("filter-type").onchange = function filterType(){
 }
 
 // função filtrar por fraqueza
-//document.getElementById("filter-weakness").onchange = function filterWea() {
-//let weakFilter = document.getElementById("filter-weakness").value; 
-   export function selectWeak(x) {
+
+const  way = pokemon.pokemon;
+   export function selectWeak(search) {
     let weakFilter = document.getElementById("filter-weakness").value;
-    let fraqueza = pokemon.pokemon[x].weaknesses;
-    console.log(fraqueza)
-    console.log(weakFilter)
-    if (fraqueza.includes(weakFilter)) {
-      return
-    }
+    //const  way = pokemon.pokemon;
+     return  way.filter(function (search) {//pokemon.pokemon[x].weaknesses;
+      return search.weaknesses.includes(weakFilter) 
+    
+    });  
+
+    //console.log(fraqueza)
+      
+    
+   // console.log(fraqueza)
   }
+    /* console.log(fraqueza)
+    console.log(weakFilter) */
+   // if (fraqueza.includes(weakFilter)) {
+    //  return
+   // }
+  
+ /* document.getElementById("select-type").addEventListener("change", searchType)
+
+ function searchType() {
+     console.log("teste");
+    const filterType = document.getElementById("select-type").value;
+    const listType = pokemonGo.filter(function (search) {
+        return search.type.includes(filterType);
+    });
+    allList(listType);
+}  */
+
      /*  document.getElementById("div-pokes").innerHTML += `
       <div class="column pokemon" id="pokemon${pokemon.pokemon[x].id}" data-id="${pokemon.pokemon[x].id}">
       <img src=${pokemon.pokemon[x].img}>
@@ -132,10 +162,10 @@ document.getElementById("filter-type").onchange = function filterType(){
 
 
 //função ordenar
-var orderAZ = (a, b) => (a["name"]).localeCompare(b["name"])
-var orderByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
-var orderSpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
-var caminho = pokemon.pokemon;
+let orderAZ = (a, b) => (a["name"]).localeCompare(b["name"])
+let orderByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
+let orderSpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
+let caminho = pokemon.pokemon;
 export function orderPokes(order) {
     switch (order) {
     case "size":

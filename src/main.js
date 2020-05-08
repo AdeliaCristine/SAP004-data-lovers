@@ -15,26 +15,24 @@ function scroll() {
   }
 }
 
-var scrollTop = function (evt) {
+let scrollTop = function (evt) {
   evt.preventDefault();
   window.scrollTo(0, 0);
 };
 document.getElementById("btn-top").addEventListener("click", scrollTop);
 
 
-function pokemonImage(numeroDoIdDoPersonagem, banco) {
-  const way = banco[numeroDoIdDoPersonagem];
+function pokemonImage(numeroDoIdDoPersonagem,banco ) {
+ const way = banco[numeroDoIdDoPersonagem];
+ 
   let box = `
       <div class="column pokemon" id="pokemon${way.id}" data-id="${way.id}" >
       <img src=${way.img}>
       <p class="text">${way.name}</p>
       </div>
 `;
-  return box;
+  return box ; 
 }
-//pokemonImage.map ( criaImagemNoHtml)
-
-//console.log(pokemonImage.map ( criaImagemNoHtml))
 
 function criaImagemNoHtml(teste) {
   let htmlCards = '';
@@ -84,16 +82,14 @@ function abrirModal(index) {
   }
   return box2;
 }
-let weakFilter = document.getElementById("filter-weakness")
+
+
 document.getElementById("filter-weakness").onchange = function filterWeak() {
-  const filtrado = selectWeak(weakFilter.value)
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
-  let template = ""
-  for (let i = 0; i < data.pokemon.length; i++) {
-    template += pokemonImage(i, filtrado)
-  }
-  htmlCards.innerHTML = template
+  const filtrado = selectWeak(data.pokemon)
+  criaImagemNoHtml(filtrado)
+  //console.log(filtrado)
   rodarModal()
 }
 
