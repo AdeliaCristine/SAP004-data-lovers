@@ -1,4 +1,4 @@
-import { orderPokes, selectWeak } from './data.js';
+import { orderPokes, selectWeak, selectName } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -84,10 +84,10 @@ function abrirModal(index) {
 }
 
 
-document.getElementById("filter-weakness").onchange = function filterWeak() {
+document.getElementById("name-pokemon").oninput = function searchName(){
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
-  const filtrado = selectWeak(data.pokemon)
+  const pesquisado = selectName(data.pokemon)
   criaImagemNoHtml(filtrado)
   //console.log(filtrado)
   rodarModal()
