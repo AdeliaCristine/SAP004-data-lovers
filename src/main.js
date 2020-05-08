@@ -1,4 +1,4 @@
-import { orderPokes, selectWeak } from './data.js';
+import { orderPokes, selectFilter, selectWeak } from './data.js';
 
 import data from './data/pokemon/pokemon.js';
 
@@ -84,6 +84,19 @@ function abrirModal(index) {
 }
 
 
+
+// função filtrar por tipo
+document.getElementById("filter-type").onchange = function typeFilter(){
+  const htmlCards = document.getElementById("div-pokes")
+  htmlCards.innerHTML = ""
+  const filtrado = selectFilter(data.pokemon)
+  criaImagemNoHtml(filtrado)
+    rodarModal() }
+
+
+
+
+// função filtrar por fraquezas
 document.getElementById("filter-weakness").onchange = function filterWeak() {
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
