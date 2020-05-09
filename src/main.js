@@ -17,7 +17,7 @@ let scrollTop = function (evt) {
   evt.preventDefault();
   window.scrollTo(0, 0);
 };
-document.getElementById("btn-top").addEventListener("onclick", scrollTop);
+document.getElementById("btn-top").addEventListener("click", scrollTop);
 
 function pokemonImage(numeroDoIdDoPersonagem, banco) {
   const way = banco[numeroDoIdDoPersonagem];
@@ -119,3 +119,4 @@ document.getElementById("order-search").onchange = function () {
   htmlCards.innerHTML = template
   rodarModal()
 }
+

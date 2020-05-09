@@ -43,3 +43,19 @@ export function orderPokes(order) {
       break
  }
 }
+//saiba mais
+let tipos = way.type
+console.log(tipos)
+let porcen = way.filter(item => item.type.includes("Grass"))
+let grama =porcen.length
+let total = way.length
+let result = grama/total
+document.getElementById("info").innerHTML = `Os pokemons tipo Grama representam ${result} %`
+
+/* function myFunction() {
+  let total = way.length
+ document.getElementById("info").innerHTML = way.length
+ if (total.includes(Grass.length)){
+  console.log(Grass.length)
+ }
+} myFunction() */
