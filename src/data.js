@@ -50,7 +50,8 @@ let porcen = way.filter(item => item.type.includes("Grass"))
 let grama =porcen.length
 let total = way.length
 let result = grama/total
-document.getElementById("info").innerHTML = `Os pokemons tipo Grama representam ${result} %`
+console.log(result)
+//document.getElementById("info").innerHTML = `Os pokemons tipo Grama representam ${result} %`
 
 /* function myFunction() {
   let total = way.length
