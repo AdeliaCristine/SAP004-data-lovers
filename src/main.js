@@ -17,7 +17,7 @@ let scrollTop = function (evt) {
   evt.preventDefault();
   window.scrollTo(0, 0);
 };
-document.getElementById("btn-top").addEventListener("onclick", scrollTop);
+document.getElementById("btn-top").addEventListener("click", scrollTop);
 
 function pokemonImage(numeroDoIdDoPersonagem, banco) {
   const way = banco[numeroDoIdDoPersonagem];
@@ -102,8 +102,8 @@ document.getElementById("filter-type").onchange = function typeFilter() {
 document.getElementById("filter-weakness").onchange = function filterWeak() {
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
-  const filtrado = selectWeak(data.pokemon)
-  criaImagemNoHtml(filtrado)
+  const pesquisado = selectWeak(data.pokemon)
+  criaImagemNoHtml(pesquisado)
   rodarModal()
 }
 
@@ -119,3 +119,4 @@ document.getElementById("order-search").onchange = function () {
   htmlCards.innerHTML = template
   rodarModal()
 }
+

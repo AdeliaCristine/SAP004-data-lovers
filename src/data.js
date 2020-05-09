@@ -1,5 +1,5 @@
 import pokemon from "./data/pokemon/pokemon.js";
-export const example = () => {}
+//export const example = () => {}
 
 const way = pokemon.pokemon
 //Busca por Nome
@@ -46,3 +46,20 @@ export function orderPokes(order) {
       return way.sort((a, b) => orderZA(a, b)).reverse();
   }
 }
+//saiba mais
+let tipos = way.type
+console.log(tipos)
+let porcen = way.filter(item => item.type.includes("Grass"))
+let grama =porcen.length
+let total = way.length
+let result = grama/total
+console.log(result)
+//document.getElementById("info").innerHTML = `Os pokemons tipo Grama representam ${result} %`
+
+/* function myFunction() {
+  let total = way.length
+ document.getElementById("info").innerHTML = way.length
+ if (total.includes(Grass.length)){
+  console.log(Grass.length)
+ }
+} myFunction() */
