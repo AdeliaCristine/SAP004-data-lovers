@@ -3,15 +3,19 @@ import pokemon from "./data/pokemon/pokemon.js";
 
 const way = pokemon.pokemon
 //Busca por Nome
-export function selectName(search) {
+export function selectName() {
   let pokesName = document.getElementById("name-pokemon").value;
   const pokemonName = pokesName.toUpperCase();
   return way.filter(function (search) {
-    return search.name.toUpperCase().includes(pokemonName)
+    return search.name.toUpperCase().includes(pokemonName) 
+    
+
   });
+  
+
 }
 // Filtrar NOVO
-export function selectFilter(search) {
+export function selectFilter() {
   let filterType = document.getElementById("filter-type").value;
   return way.filter(function (search) {
     return search.type.includes(filterType)
@@ -19,7 +23,7 @@ export function selectFilter(search) {
 
 }
 // função filtrar por fraqueza NOVA
-export function selectWeak(search) {
+export function selectWeak() {
   let weakFilter = document.getElementById("filter-weakness").value;
   return way.filter(function (search) {
     return search.weaknesses.includes(weakFilter)
@@ -35,17 +39,20 @@ export function orderPokes(order) {
   switch (order) {
     case "size":
       return way.sort((a, b) => orderByHeight(a, b))
-      break
+     //break
     case "order-spawn":
       return way.sort((a, b) => orderSpawnChance(a, b))
-      break
+     // break
     case "order-az":
       return way.sort((a, b) => orderAZ(a, b))
-      break
+     // break
     case "order-za":
       return way.sort((a, b) => orderZA(a, b)).reverse();
   }
 }
+
+/*
+
 //saiba mais
 let tipos = way.type
 console.log(tipos)
