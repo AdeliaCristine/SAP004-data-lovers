@@ -1,7 +1,9 @@
 import {
   selectName, selectFilter, selectWeak,orderPokes} from '../src/data.js';
 
-/*const pokemon = [{
+const pokemonMock = {
+  pokemon: [
+    {
   "id": 1,
   "num": "001",
   "name": "Bulbasaur",
@@ -32,20 +34,22 @@ import {
     "num": "003",
     "name": "Venusaur"
   }],
-}]
-*/
+}]};
+
 
 // Teste busca por Nome
 describe('Searching a pokemon by name', () => {
   it('should be a function', () => {
     expect(typeof selectName).toBe('function');
   });
-});
-/*
-  it('should return "Bulbasaur" for "bul"', () => {
-    expect(selectName("bul")).toBe('Bulbasaur');
+
+
+
+  it('should return "Bulbasaur" when search the pokemon by name "bul"', () => {
+    expect(selectName(pokemonMock.pokemon, "name", "Bulbassaur")).toEqual([{nome: 'Bulbasaur'}])
   });
-});*/
+});
+
 
 // Teste filtrar por tipo
 describe('Selecting a pokemon by type', () => {

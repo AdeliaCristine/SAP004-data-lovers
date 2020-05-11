@@ -4,7 +4,7 @@ import pokemon from "./data/pokemon/pokemon.js";
 const way = pokemon.pokemon
 //Busca por Nome
 export function selectName() {
-  let pokesName = document.getElementById("name-pokemon").value;
+  const pokesName = document.getElementById("name-pokemon").value;
   const pokemonName = pokesName.toUpperCase();
   return way.filter(function (search) {
     return search.name.toUpperCase().includes(pokemonName) 
@@ -25,7 +25,7 @@ export function selectFilter() {
 // função filtrar por fraqueza NOVA
 export function selectWeak() {
   let weakFilter = document.getElementById("filter-weakness").value;
-  return way.filter(function (search) {
+    return way.filter(function (search) {
     return search.weaknesses.includes(weakFilter)
 
   });

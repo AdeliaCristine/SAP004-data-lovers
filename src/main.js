@@ -82,6 +82,9 @@ function abrirModal(index) {
 }
 //Nome
 document.getElementById("name-pokemon").oninput = function searchName() {
+  document.getElementById("filter-type").value = "";
+  document.getElementById("filter-weakness").value = "";
+  document.getElementById("order-search").value = "";
   const htmlCards = document.getElementById("div-pokes") 
   htmlCards.innerHTML = ""
   const pesquisado = selectName(data.pokemon) 
@@ -91,6 +94,9 @@ document.getElementById("name-pokemon").oninput = function searchName() {
 
 // função filtrar por tipo
 document.getElementById("filter-type").onchange = function typeFilter() {
+  document.getElementById("name-pokemon").value = "";
+  document.getElementById("filter-weakness").value = "";
+  document.getElementById("order-search").value = "";
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
   const filtrado = selectFilter(data.pokemon)
@@ -100,6 +106,9 @@ document.getElementById("filter-type").onchange = function typeFilter() {
 
 // função filtrar por fraquezas
 document.getElementById("filter-weakness").onchange = function filterWeak() {
+  document.getElementById("name-pokemon").value = "";
+  document.getElementById("filter-type").value = "";
+  document.getElementById("order-search").value = "";
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
   const pesquisado = selectWeak(data.pokemon)
@@ -109,6 +118,9 @@ document.getElementById("filter-weakness").onchange = function filterWeak() {
 
 let searchOrder = document.getElementById("order-search")
 document.getElementById("order-search").onchange = function () {
+  document.getElementById("name-pokemon").value = "";
+  document.getElementById("filter-type").value = "";
+  document.getElementById("filter-weakness").value = "";
   const ordenada = orderPokes(searchOrder.value)
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
