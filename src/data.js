@@ -1,17 +1,13 @@
-import pokemon from "./data/pokemon/pokemon.js";
-//export const example = () => {}
 
-const way = pokemon.pokemon
 //Busca por Nome
-export const selectName = () => {
-  let pokesName = document.getElementById("name-pokemon").value;
-  const pokemonName = pokesName.toUpperCase();
-  return way.filter(function (search) {
-    return search.name.toUpperCase().includes(pokemonName) 
-    
+export function selectName(data,name) {
+  const pokemonName = name.toUpperCase();
+  return data.filter(function (search) {
+    return search.name.toUpperCase().includes(pokemonName)
+
+ 
 
   });
-  
 
 }
 /* export function selectName() {
@@ -22,9 +18,8 @@ export const selectName = () => {
   });
 } */
 // Filtrar NOVO
-export const selectFilter = () =>{
-  let filterType = document.getElementById("filter-type").value;
-  return way.filter(function (search) {
+export function selectFilter(data,filterType) {
+    return data.filter(function (search) {
     return search.type.includes(filterType)
   });
 }
@@ -36,9 +31,8 @@ export const selectFilter = () =>{
 
 } */
 // função filtrar por fraqueza NOVA
-export const selectWeak = () => {
-  let weakFilter = document.getElementById("filter-weakness").value;
-    return way.filter(function (search) {
+export function selectWeak(data,weakFilter) {
+    return data.filter(function (search) {
     return search.weaknesses.includes(weakFilter)
 
   });
@@ -52,33 +46,23 @@ export function selectWeak() {
   });
 } */
 //função ordenar
-let orderAZ = (a, b) => (a["name"]).localeCompare(b["name"])
-let orderZA = (a, b) => (a["name"]).localeCompare(b["name"])
-let orderByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
-let orderSpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
-export function orderPokes(order) {
+const orderAZ = (a, b) => (a["name"]).localeCompare(b["name"])
+const orderZA = (a, b) => (a["name"]).localeCompare(b["name"])
+const orderByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
+const orderSpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
+export function orderPokes(data, order) {
   switch (order) {
     case "size":
-      return way.sort((a, b) => orderByHeight(a, b))
-     //break
+      return data.sort((a, b) => orderByHeight(a, b))
+      //break
     case "order-spawn":
-      return way.sort((a, b) => orderSpawnChance(a, b))
-     // break
+      return data.sort((a, b) => orderSpawnChance(a, b))
+      // break
     case "order-az":
-      return way.sort((a, b) => orderAZ(a, b))
-     // break
+      return data.sort((a, b) => orderAZ(a, b))
+      // break
     case "order-za":
-      return way.sort((a, b) => orderZA(a, b)).reverse();
+      return data.sort((a, b) => orderZA(a, b)).reverse();
   }
 }
 
-
-
-/* //saiba mais
-let tipos = way.type
-console.log(tipos)
-let porcen = way.filter(item => item.type.includes("Grass"))
-let grama =porcen.length
-let total = way.length 
-let result = grama/total
-console.log(result) */
