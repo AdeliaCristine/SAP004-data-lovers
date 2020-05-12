@@ -2,29 +2,24 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>PokeLovers - Pokémons</title>
     <link rel="stylesheet" href="image/style.css" />
 </head>
 
 <body>
-
-    <!-- <div id="root"></div>-->
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
+    <div id="details" class="details">
+        <div class="details-content">
             <span class="close">&times;</span>
             <p id="modal1"></p>
         </div>
-
     </div>
-
     <header>
         <button id="home" class="btn-home"><a href="index.html">Tela inicial </a></button><br />
       
 
-        <form action="" id="search-form" class="search-form">
+        <form action="" id="search-form" class="search-form backgray" >
             <section>
                 <ul class="list">
                     <label for="name-pokemon" class="name-search">Faça sua busca aqui:</label>
@@ -70,7 +65,7 @@
                         <option value="Poison">Venenoso</option>
                         <option value="Flying">Voador</option>
                     </select>
-                    <label for="order-search" class="order-search">Ordenar por:</label>
+                    <label for="order-search" class="order-search">Ordenar:</label>
                     <select id="order-search" class="order-search">
                         <option value=""></option>
                         <option value="order-az"> Nomes A - Z</option>
@@ -78,8 +73,8 @@
                         <option value="size"> Tamanho </option>
                         <option value="order-spawn"> Chance de Captura</option>
                     </select>
-                    <button id="more" class="btn-more"><a href="mais.html"> Saiba Mais </a></button><br />
-                    <button id="play" class="btn-play"> <a href="https://www.pokemongo.com/pt-pt/"
+                    <button id="more" class="btn-more botao"><a href="mais.html"> Saiba Mais </a></button><br />
+                    <button id="play" class="btn-play botao"> <a href="https://www.pokemongo.com/pt-pt/"
                             target="_blank">Ir para Jogo</a> </button>
                 </ul>
             </section>
@@ -92,7 +87,7 @@
         <button id="btn-all" class="btn-all"><a href="personagens.html">Ver Todos </a> </button>
 
     </main>
-    <button id="btn-top" class="btn-top">Topo</button>
+    <button id="btn-top" class="btn-top botao">Topo</button>
     <script src="main.js" type="module"></script>
 </body>
 

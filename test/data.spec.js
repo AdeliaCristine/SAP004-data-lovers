@@ -1,6 +1,5 @@
-import {
-  selectName, selectFilter, selectWeak} from '../src/data.js';
-
+import { selectName, selectFilter, selectWeak,orderPokes} from '../src/data.js';
+ 
 const pokemonMock = {
   pokemon: [{
     "name": "Bulbasaur",
@@ -71,6 +70,7 @@ describe('Selecting a pokemon by type', () => {
   });
 });*/
 
+ 
 // Teste filtrar por fraqueza
 describe('Selecting a pokemon by type', () => {
   it('should be a function', () => {
@@ -85,13 +85,13 @@ describe('Selecting a pokemon by type', () => {
 */
 
 // Teste Ordenar
-/*
+
 describe('Selecting a pokemon by type', () => {
   it('should be a function', () => {
     expect(typeof orderPokes).toBe('function');
   })
 });
-
+/*
   it('should return "Bulbasaur", "Ivysaur" and "Squirtle" by "A-Z" order, () => {
    //expect(orderPokes.orderAZ (pokemonMock.pokemon, "name")..toEqual([{"Bulbasaur", "Ivysaur" and "Squirtle}]
 expect(orderPokes(pokemonMock.pokemon, "order")..toEqual([{"Bulbasaur", "Ivysaur" and "Squirtle}]

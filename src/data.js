@@ -5,17 +5,31 @@ export function selectName(data,name) {
   return data.filter(function (search) {
     return search.name.toUpperCase().includes(pokemonName)
 
+ 
 
   });
 
 }
+/* export function selectName() {
+  let pokesName = document.getElementById("name-pokemon").value;
+  const pokemonName = pokesName.toUpperCase();
+  return way.filter(function (search) {
+    return search.name.toUpperCase().includes(pokemonName)
+  });
+} */
 // Filtrar NOVO
 export function selectFilter(data,filterType) {
     return data.filter(function (search) {
     return search.type.includes(filterType)
   });
-
 }
+/* export function selectFilter() {
+  let filterType = document.getElementById("filter-type").value;
+  return way.filter(function (search) {
+    return search.type.includes(filterType)
+  });
+
+} */
 // função filtrar por fraqueza NOVA
 export function selectWeak(data,weakFilter) {
     return data.filter(function (search) {
@@ -23,6 +37,14 @@ export function selectWeak(data,weakFilter) {
 
   });
 }
+/* 
+export function selectWeak() {
+  let weakFilter = document.getElementById("filter-weakness").value;
+  return way.filter(function (search) { 
+    return search.weaknesses.includes(weakFilter)
+
+  });
+} */
 //função ordenar
 const orderAZ = (a, b) => (a["name"]).localeCompare(b["name"])
 const orderZA = (a, b) => (a["name"]).localeCompare(b["name"])
@@ -44,22 +66,3 @@ export function orderPokes(data, order) {
   }
 }
 
-/*
-
-//saiba mais
-let tipos = data.type
-console.log(tipos)
-let porcen = data.filter(item => item.type.includes("Grass"))
-let grama =porcen.length
-let total = data.length
-let result = grama/total
-console.log(result)
-//document.getElementById("info").innerHTML = `Os pokemons tipo Grama representam ${result} %`
-
-/* function myFunction() {
-  let total = data.length
- document.getElementById("info").innerHTML = data.length
- if (total.includes(Grass.length)){
-  console.log(Grass.length)
- }
-} myFunction() */

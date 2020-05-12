@@ -25,7 +25,7 @@ function pokemonImage(numeroDoIdDoPersonagem, banco) {
   const way = banco[numeroDoIdDoPersonagem];
 
   let box = `
-      <div class="column pokemon" id="pokemon${way.id}" data-id="${way.id}" >
+      <div class="column pokemon backgray" id="pokemon${way.id}" data-id="${way.id}" >
       <img src=${way.img}>
       <p class="text">${way.name}</p>
       </div>
@@ -57,7 +57,7 @@ rodarModal();
 function abrirModal(index) {
   const caminho = data.pokemon.find(pokemon => pokemon.id == index)
   let box2 = `
-      <div class="column" >
+      <div class="column backgray" >
       <img src=${caminho.img}>
       <p class="text">${caminho.name}</p>
       <p class="text">Tipo:${caminho.type}</p>
@@ -68,7 +68,7 @@ function abrirModal(index) {
       <p class="text">Evolução Anterior:${caminho.prev_evolution ? caminho.prev_evolution[0].name : "Não tem evolução"}</p>
       <p class="text">Proxima Evolução:${caminho.next_evolution ? caminho.next_evolution[0].name : "Não tem evolução"}</p>
       </div>`
-  let modal = document.getElementById("myModal");
+  let modal = document.getElementById("details");
   let span = document.getElementsByClassName("close")[0];
   modal.style.display = "block";
   document.getElementById("modal1").innerHTML = box2;
