@@ -7,8 +7,12 @@ export const selectName = () => {
   let pokesName = document.getElementById("name-pokemon").value;
   const pokemonName = pokesName.toUpperCase();
   return way.filter(function (search) {
-    return search.name.toUpperCase().includes(pokemonName)
+    return search.name.toUpperCase().includes(pokemonName) 
+    
+
   });
+  
+
 }
 /* export function selectName() {
   let pokesName = document.getElementById("name-pokemon").value;
@@ -34,7 +38,7 @@ export const selectFilter = () =>{
 // função filtrar por fraqueza NOVA
 export const selectWeak = () => {
   let weakFilter = document.getElementById("filter-weakness").value;
-  return way.filter(function (search) { 
+    return way.filter(function (search) {
     return search.weaknesses.includes(weakFilter)
 
   });
@@ -49,26 +53,32 @@ export function selectWeak() {
 } */
 //função ordenar
 let orderAZ = (a, b) => (a["name"]).localeCompare(b["name"])
+let orderZA = (a, b) => (a["name"]).localeCompare(b["name"])
 let orderByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
 let orderSpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
 export function orderPokes(order) {
   switch (order) {
     case "size":
       return way.sort((a, b) => orderByHeight(a, b))
-     // break
+     //break
     case "order-spawn":
       return way.sort((a, b) => orderSpawnChance(a, b))
      // break
     case "order-az":
       return way.sort((a, b) => orderAZ(a, b))
      // break
+    case "order-za":
+      return way.sort((a, b) => orderZA(a, b)).reverse();
+  }
 }
-}
-//saiba mais
-//let tipos = way.type
-//console.log(tipos)
-/* let porcen = way.filter(item => item.type.includes("Grass"))
+
+
+
+/* //saiba mais
+let tipos = way.type
+console.log(tipos)
+let porcen = way.filter(item => item.type.includes("Grass"))
 let grama =porcen.length
-let total = way.length */
-//let result = grama/total
-//console.log(result)
+let total = way.length 
+let result = grama/total
+console.log(result) */
