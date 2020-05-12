@@ -1,4 +1,4 @@
-import {orderPokes, selectName, selectFilter, selectWeak} from './data.js';
+import {selectName, selectFilter, selectWeak,orderPokes} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 //Botão topo
@@ -66,7 +66,7 @@ function abrirModal(index) {
       <p class="text">Evolução Anterior:${caminho.prev_evolution ? caminho.prev_evolution[0].name : "Não tem evolução"}</p>
       <p class="text">Proxima Evolução:${caminho.next_evolution ? caminho.next_evolution[0].name : "Não tem evolução"}</p>
       </div>`
-  let modal = document.getElementById("myModal");
+  let modal = document.getElementById("details");
   let span = document.getElementsByClassName("close")[0];
   modal.style.display = "block";
   document.getElementById("modal1").innerHTML = box2;
@@ -80,6 +80,8 @@ function abrirModal(index) {
   }
   return box2;
 }
+
+
 //Nome
 document.getElementById("name-pokemon").oninput = function searchName() {
   const htmlCards = document.getElementById("div-pokes") 
