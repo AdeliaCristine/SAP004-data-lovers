@@ -9,6 +9,10 @@ body {
   background-size: cover;
 }
 
+.backgray{
+  background-color: rgba(245, 245, 245, 0.5);
+}
+
 .search-form {
   /* display: block; */
   font-family: 'Bangers', cursive;
@@ -17,8 +21,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(245, 245, 245, 0.5);
-  color: black;
+   color: black;
   border-radius: 5px;
   align-content: center;
   margin: 5px 35px;
@@ -31,7 +34,6 @@ main {
   max-width: 85%;
   height: 6000px;
   border-radius: 20px;
-  border-color: silver;
   margin: 20px auto;
   position: relative;
   text-align: center;
@@ -41,7 +43,6 @@ main {
 }
 
 .presentation {
-  background-color: rgba(245, 245, 245, 0.5);
   width: 1000px;
   height: 560px;
   border-radius: 20px;
@@ -58,7 +59,6 @@ main {
 .column {
   font-family: 'Bangers', cursive;
   font: 16px;
-  background-color: rgba(245, 245, 245, 0.664);
   align-content: center;
   margin: 10px;
   border-radius: 20px;
@@ -190,10 +190,9 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
   border-radius: 10px;
-  background-color: rgba(103, 187, 243, 0.685);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  background-color: rgba(25, 131, 202, 0.685);
+
 }
 @media(max-width:600px){
 
@@ -208,8 +207,7 @@ button {
     height: 100px;
     width: 75%;
     justify-content: space-between;
-    background-color: rgba(245, 245, 245, 0.5);
-    margin: 5px 35px;
+        margin: 5px 35px;
     position: top;
     display: block;
   }
