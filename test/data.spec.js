@@ -1,40 +1,49 @@
 import {
-  selectName, selectFilter, selectWeak,orderPokes} from '../src/data.js';
+  selectName, selectFilter, selectWeak} from '../src/data.js';
 
 const pokemonMock = {
-  pokemon: [
-    {
-  "id": 1,
-  "num": "001",
-  "name": "Bulbasaur",
-  "img": "http://www.serebii.net/pokemongo/pokemon/001.png",
-  "type": [
+  pokemon: [{
+    "name": "Bulbasaur",
+    "type": [
     "Grass",
     "Poison"
   ],
   "height": "0.71 m",
-  "weight": "6.9 kg",
-  "candy": "Bulbasaur Candy",
-  "candy_count": 25,
-  "egg": "2 km",
-  "spawn_chance": 0.69,
-  "avg_spawns": 69,
-  "spawn_time": "20:00",
-  "multipliers": [1.58],
+    "spawn_chance": 0.69,
   "weaknesses": [
     "Fire",
     "Ice",
     "Flying",
     "Psychic"
+  ]},  
+{
+  "name": "Ivysaur",
+  "type": [
+    "Grass",
+    "Poison"
   ],
-  "next_evolution": [{
-    "num": "002",
-    "name": "Ivysaur"
-  }, {
-    "num": "003",
-    "name": "Venusaur"
-  }],
-}]};
+  "height": "0.99 m",
+  "spawn_chance": 0.042,
+  "weaknesses": [
+    "Fire",
+    "Ice",
+    "Flying",
+    "Psychic"
+  ]},
+  {
+    "name": "Squirtle",
+    "type": [
+      "Water"
+    ],
+    "height": "0.51 m",
+    "spawn_chance": 0.58,
+    "weaknesses": [
+      "Electric",
+      "Grass"
+    ],
+}]
+};
+
 
 
 // Teste busca por Nome
@@ -43,10 +52,9 @@ describe('Searching a pokemon by name', () => {
     expect(typeof selectName).toBe('function');
   });
 
-
-
   it('should return "Bulbasaur" when search the pokemon by name "bul"', () => {
-    expect(selectName(pokemonMock.pokemon, "name", "Bulbassaur")).toEqual([{nome: 'Bulbasaur'}])
+    const result = selectName(pokemonMock.pokemon,"bul")
+    expect(result[0].name).toEqual("Bulbasaur")
   });
 });
 
@@ -58,8 +66,8 @@ describe('Selecting a pokemon by type', () => {
   });
 });
 /*
-  it('should return "Glastly","Gengar","Haunter" for "Fantasma"', () => {
-    expect(selectFilter("ghost")).toBe("Glastly","Gengar","Haunter");
+  it('should return "Squirtle", for type "Water"', () => {
+    expect(selectFilter(pokemonMock.pokemon, "type", "Water")..toEqual([{nome: "Squirtle"}])
   });
 });*/
 
@@ -70,21 +78,28 @@ describe('Selecting a pokemon by type', () => {
   });
 });
 /*
-  it('should return "Dratini","Dragonite","Dragonair" for "Dragão"', () => {
-    expect(selectWeak("dragon")).toBe('"Dratini","Dragonite","Dragonair"');
+  it('should return "Squirtle" for Electric"', () => {
+         expect(selectWeak(pokemonMock.pokemon, "weaknesses", "Electric")..toEqual([{nome: "Squirtle"}])
   });
 });
 */
 
 // Teste Ordenar
-
+/*
 describe('Selecting a pokemon by type', () => {
   it('should be a function', () => {
     expect(typeof orderPokes).toBe('function');
-  });
+  })
 });
 
- /* it('should return "Bulbasaur" for "bul"', () => {
-   expect(orderPokes("bul")).toBe('Bulbasaur');
+  it('should return "Bulbasaur", "Ivysaur" and "Squirtle" by "A-Z" order, () => {
+   //expect(orderPokes.orderAZ (pokemonMock.pokemon, "name")..toEqual([{"Bulbasaur", "Ivysaur" and "Squirtle}]
+expect(orderPokes(pokemonMock.pokemon, "order")..toEqual([{"Bulbasaur", "Ivysaur" and "Squirtle}]
+
+ 
   })
 }); */
+
+
+
+ 

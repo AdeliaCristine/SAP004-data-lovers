@@ -1,9 +1,5 @@
-import {
-  orderPokes,
-  selectName,
-  selectFilter,
-  selectWeak
-} from './data.js';
+import {  orderPokes,  selectName,  selectFilter,  selectWeak}
+ from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 //Botão topo
@@ -121,7 +117,8 @@ function limpaCamposNomeTiposFraquezas() {
 document.getElementById("name-pokemon").oninput = function searchName() {
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
-  const pesquisado = selectName(data.pokemon)
+  const pokesName = document.getElementById("name-pokemon").value;
+  const pesquisado = selectName(data.pokemon, pokesName)
   criaImagemNoHtml(pesquisado)
   rodarModal()
   limpaCamposTiposFraquezasOrdem()
@@ -131,7 +128,8 @@ document.getElementById("name-pokemon").oninput = function searchName() {
 document.getElementById("filter-type").onchange = function typeFilter() {
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
-  const filtrado = selectFilter(data.pokemon)
+  const filterType = document.getElementById("filter-type").value;
+  const filtrado = selectFilter(data.pokemon, filterType)
   criaImagemNoHtml(filtrado)
   rodarModal()
   limpaCamposNomeFraquezasOrdem()
@@ -141,16 +139,18 @@ document.getElementById("filter-type").onchange = function typeFilter() {
 document.getElementById("filter-weakness").onchange = function filterWeak() {
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
-  const pesquisado = selectWeak(data.pokemon)
+  const weakFilter = document.getElementById("filter-weakness").value;
+  const pesquisado = selectWeak(data.pokemon, weakFilter)
   criaImagemNoHtml(pesquisado)
   rodarModal()
   limpaCamposNomeTiposOrdem()
 }
 
 // função filtrar por ordem
-let searchOrder = document.getElementById("order-search")
+
 document.getElementById("order-search").onchange = function () {
-  const ordenada = orderPokes(searchOrder.value)
+  const searchOrder = document.getElementById("order-search")
+  const ordenada = orderPokes(data.pokemon, searchOrder.value)
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
   let template = ""
