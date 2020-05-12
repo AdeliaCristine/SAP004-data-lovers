@@ -116,7 +116,8 @@ function limpaCamposNomeTiposFraquezas() {
 document.getElementById("name-pokemon").oninput = function searchName() {
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
-  const pesquisado = selectName(data.pokemon)
+  let pokesName = document.getElementById("name-pokemon").value;
+  const pesquisado = selectName(pokesName)
   criaImagemNoHtml(pesquisado)
   rodarModal()
   limpaCamposTiposFraquezasOrdem()
