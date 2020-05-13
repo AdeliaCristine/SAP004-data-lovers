@@ -87,9 +87,10 @@ function abrirModal(index) {
 //Limpar Campos: Tipos, fraquezas e Ordem  *colocar na função nome
 function limpaCamposTiposFraquezasOrdem() {
   document.getElementById("filter-type").value = "";
+  document.getElementById("div-calc").innerHTML = "";
   document.getElementById("filter-weakness").value = "";
   document.getElementById("order-search").value = "";
-}
+  }
 
 //Limpar Campos: Nome, fraquezas e Ordem *colocar na função tipo 2
 function limpaCamposNomeFraquezasOrdem() {
@@ -103,6 +104,7 @@ function limpaCamposNomeFraquezasOrdem() {
 function limpaCamposNomeTiposOrdem() {
   document.getElementById("name-pokemon").value = "";
   document.getElementById("filter-type").value = "";
+  document.getElementById("div-calc").innerHTML = "";
   document.getElementById("order-search").value = "";
 }
 
@@ -110,6 +112,7 @@ function limpaCamposNomeTiposOrdem() {
 function limpaCamposNomeTiposFraquezas() {
   document.getElementById("name-pokemon").value = "";
   document.getElementById("filter-type").value = "";
+  document.getElementById("div-calc").innerHTML = "";
   document.getElementById("filter-weakness").value = "";
 }
 
@@ -142,8 +145,12 @@ function porcentagem(){
   const filterType = document.getElementById("filter-type").value;
   const tipo =  way.filter(search => search.type.includes(filterType))
   let result = Math.round((tipo.length/way.length) * 100)/100
-  document.getElementById("porcentagem").innerHTML=`Temos ${result} % de pokemons do tipo ${filterType}.`
+  document.getElementById("div-calc").innerHTML=`Temos ${result} % de pokemons do tipo ${filterType1}.`
+
 }
+
+  
+
 
 // função filtrar por fraquezas
 document.getElementById("filter-weakness").onchange = function filterWeak() {

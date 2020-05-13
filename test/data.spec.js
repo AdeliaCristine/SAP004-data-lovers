@@ -45,16 +45,6 @@ const pokemonMock = {
   }]
 };
 
-/* const za = {
-  name:
-  name:
-  name:
-}
-consta captura ={
-
-}
- */
-
 describe('Selecting a pokemon by name', () => {
   it('should be a function', () => {
     expect(typeof selectName).toBe('function');
