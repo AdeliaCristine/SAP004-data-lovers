@@ -146,8 +146,6 @@ function porcentagem(){
   const filterType = document.getElementById("filter-type").value;
   const tipo =  way.filter(search => search.type.includes(filterType))
   let result = Math.round((tipo.length/way.length) * 100)/100
-
-
   document.getElementById("div-calc").innerHTML=`Temos ${result} % de pokemons do tipo ${filterType1}.`
 
 }
