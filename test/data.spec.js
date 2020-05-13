@@ -63,7 +63,7 @@ describe('Selecting a pokemon by type', () => {
     expect(typeof selectFilter).toBe('function');
   });
   it('should return "Squirtle", for type "Water"', () => {
-    const result = selectFilter(pokemonMock.pokemon,"Water")
+    const result = selectFilter(pokemonMock.pokemon,"type","Water")
     expect(result[2].type).toEqual["Squirtle"]
   });
 });

@@ -31,10 +31,21 @@ label{
   margin: 15px 12px;
 }
 
+.calc-area{
+  width: fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+  margin-left: 10px;
+  background-image: linear-gradient(to right, whitesmoke , rgba(245, 245, 245, 0.308));
+
+}
+
 .search-form {
     font-family: 'Bangers', cursive;
   font-size: 20px;
-  width: 1000px ;
+  width: 950px ;
   height: 70px;
   padding: 5px;
   margin-left: 20px ;
