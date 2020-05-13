@@ -64,8 +64,14 @@ describe('Selecting a pokemon by type', () => {
   });
   it('should return "Squirtle", for type "Water"', () => {
     const result = selectFilter(pokemonMock.pokemon,"Water")
-    expect(result[2].type).toEqual["Squirtle"]
+    expect(result.type).toEqual([{
+      name: "Squirtle",
+    type: ["Water"],
+    height: "0.51 m",
+    spawn_chance: 0.58,
+    weaknesses: [ "Electric","Grass"], }])
   });
+  
 });
 
 
@@ -76,7 +82,7 @@ describe('Selecting a pokemon by weakness', () => {
   });
   it('should return "Squirtle" for Electric"', () => {
     const result = selectWeak(pokemonMock.pokemon, "Electric")
-    expect(result[2].weaknesses).toEqual["Squirtle"]
+    expect(result[2].weaknesses).toEqual("Squirtle")
   });
 });
 
