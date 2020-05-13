@@ -16,17 +16,24 @@
         </div>
     </div>
     <header>
-        <button id="home" class="btn-home"><a href="index.html">Tela inicial </a></button><br />
-      <p id="porcentagem"></p>
+        <nav class="menu">
+            <ul class="list">
+                <li class=Home> <button id="home"><a href="index.html">Tela inicial </a></button></li>
+                <li class=item> <button id="more"><a href="mais.html"> Saiba Mais</a></button></li>
+                <li class=item> <button id="play"> <a href="https://www.pokemongo.com/pt-pt/" target="_blank">Ir para
+                            Jogo</a> </button></li>
+                <li class=item> <button id="btn-all" class="btn-all"><a href="personagens.html">Ver Todos </a> </button>
+                </li>
+            </ul>
 
-        <form action="" id="search-form" class="search-form backgray" >
-            <section>
-                <ul class="list">
-                    <label for="name-pokemon" class="name-search">Faça sua busca aqui:</label>
+            <form action="" id="search-form" class="search-form backgray">
+                <section>
+                    <!-- <div class="list"> -->
+                    <label for="name-pokemon" class="name-search">Buscar por Nome:</label>
                     <input type="text" id="name-pokemon" placeholder="Nome do Pokémon">
                     <label for="filter-type" class="filter-type"> Filtrar por:</label>
                     <select id="filter-type" class="filter-type">
-                        <option value="" disabled selected>Tipo</option>
+                        <option value="" disabled selected> Tipos</option>
                         <option value="Water">Água</option>
                         <option value="Dragon">Dragão</option>
                         <option value="Electric">Elétrico</option>
@@ -47,7 +54,7 @@
 
                     <label for="filter-weakness" class="filter-weakness">Filtrar por:</label>
                     <select id="filter-weakness" class="filter-weakness">
-                        <option value="" disabled selected>Fraqueza</option>
+                        <option value="" disabled selected> Fraquezas</option>
                         <option value="Water">Água</option>
                         <option value="Dragon">Dragão</option>
                         <option value="Electric">Elétrico</option>
@@ -65,26 +72,25 @@
                         <option value="Poison">Venenoso</option>
                         <option value="Flying">Voador</option>
                     </select>
-                    <label for="order-search" class="order-search">Ordenar:</label>
+                    <label for="order-search" class="order-search"> Ordenar por:</label>
                     <select id="order-search" class="order-search">
-                        <option value=""></option>
+                        <option value="" disabled selected> Escolha a Ordem:</option>
                         <option value="order-az"> Nomes A - Z</option>
                         <option value="order-za"> Nomes Z - A</option>
                         <option value="size"> Tamanho </option>
                         <option value="order-spawn"> Chance de Captura</option>
                     </select>
-                    <button id="more" class="btn-more botao"><a href="mais.html"> Saiba Mais </a></button><br />
-                    <button id="play" class="btn-play botao"> <a href="https://www.pokemongo.com/pt-pt/"
-                            target="_blank">Ir para Jogo</a> </button>
-                </ul>
-            </section>
-        </form>
+                    <!--  </div> -->
+                </section>
+            </form>
+        </nav>
     </header>
 
     <main>
+        <div id="porcentagem"></div>
         <div id="numero"></div>
         <div id="div-pokes"></div>
-        <button id="btn-all" class="btn-all"><a href="personagens.html">Ver Todos </a> </button>
+
 
     </main>
     <button id="btn-top" class="btn-top botao">Topo</button>
