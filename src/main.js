@@ -65,6 +65,7 @@ function abrirModal(index) {
       <p class="text">Altura:${caminho.height}</p>
       <p class="text">Peso:${caminho.weight}</p>
       <p class="text">Fraqueza:${caminho.weaknesses}</p>
+      <p class=text">Chance de captura:${caminho.spawn_chance}</p>
       <p class="text">Evolução Anterior:${caminho.prev_evolution ? caminho.prev_evolution[0].name : "Não tem evolução"}</p>
       <p class="text">Proxima Evolução:${caminho.next_evolution ? caminho.next_evolution[0].name : "Não tem evolução"}</p>
       </div>`
@@ -130,8 +131,6 @@ document.getElementById("filter-type").onchange = function typeFilter() {
   htmlCards.innerHTML = ""
   const filterType = document.getElementById("filter-type").value;
   const filtrado = selectFilter(data.pokemon, filterType)
-  let result = Math.round((filterType.length/data.length) * 100)/100
-  document.getElementById("porcentagem").innerHTML=`Temos ${result} % de pokemons do tipo ${filterType}.`
   criaImagemNoHtml(filtrado)
   rodarModal()
   limpaCamposNomeFraquezasOrdem()
