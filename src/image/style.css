@@ -209,7 +209,9 @@ button {
   background-color: rgba(25, 131, 202, 0.685);
 
 }
+
 @media(max-width:600px){
+
 
 .column{
   width: 38%;
