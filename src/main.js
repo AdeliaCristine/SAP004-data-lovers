@@ -3,7 +3,7 @@ import {  orderPokes,  selectName,  selectFilter,  selectWeak}
 import data from './data/pokemon/pokemon.js';
 
 //Botão topo
-window.onscroll = function () {
+window.onscroll =  () => {
   scroll();
 }
 
@@ -15,7 +15,7 @@ function scroll() {
     btnTop.style.display = "none"
   }
 }
-let scrollTop = function (evt) {
+let scrollTop = (evt) => {
   evt.preventDefault();
   window.scrollTo(0, 0);
 };
@@ -33,12 +33,11 @@ function pokemonImage(numeroDoIdDoPersonagem, banco) {
   return box;
 }
 
-function criaImagemNoHtml(teste) {
+const criaImagemNoHtml =(teste) => {
   let htmlCards = '';
   for (let i = 0; i < teste.length; i++) {
-
-    htmlCards += pokemonImage(i, teste)
-  }
+  htmlCards += pokemonImage(i, teste)
+}
   document.getElementById("div-pokes").innerHTML += htmlCards;
 }
 criaImagemNoHtml(data.pokemon);
@@ -145,7 +144,7 @@ function porcentagem(){
   const filterType = document.getElementById("filter-type").value;
   const tipo =  way.filter(search => search.type.includes(filterType))
   let result = Math.round((tipo.length/way.length) * 100)/100
-  document.getElementById("div-calc").innerHTML=`Temos ${result} % de pokemons do tipo ${filterType1}.`
+  document.getElementById("div-calc").innerHTML=`Temos ${result} % de pokemons desse tipo .`
 
 }
 
