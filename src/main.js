@@ -1,11 +1,25 @@
-import { selectName, selectFilter, selectWeak, orderPokes}
+import { selectName, selectFilter, selectWeak, orderPokes }
   from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-//Botão topo
-window.onscroll = () => {
-  scroll();
+
+
+document.getElementById("home").onclick = () => (
+  window.open("index.html"));
+
+document.getElementById("play").onclick = () => (
+  window.open("https://www.pokemongo.com/pt-pt/"));
+
+document.getElementById("btn-all").onclick = () => {
+  const htmlCards = document.getElementById("div-pokes")
+  htmlCards.innerHTML = ""
+  limpaTudo();
+  criaImagemNoHtml(data.pokemon);
+  rodarModal()
 }
+
+window.onscroll = () => (
+  scroll());
 
 const scroll = () => {
   let btnTop = document.getElementById("btn-top")
@@ -78,6 +92,14 @@ const abrirModal = (index) => {
     (box2);
   }
 }
+//Limpa todos os campos
+const limpaTudo = () => {
+  document.getElementById("name-pokemon").value = "";
+  document.getElementById("filter-type").value = "";
+  document.getElementById("div-calc").innerHTML = "";
+  document.getElementById("filter-weakness").value = "";
+  document.getElementById("order-search").value = "";
+}
 //Limpar Campos: Tipos, fraquezas e Ordem  *colocar na função nome
 const limpaCamposTiposFraquezasOrdem = () => {
   document.getElementById("filter-type").value = "";
@@ -110,9 +132,9 @@ const limpaCamposNomeTiposFraquezas = () => {
 //Nome
 document.getElementById("name-pokemon").oninput = () => {
   const htmlCards = document.getElementById("div-pokes")
-  htmlCards.innerHTML = ""
   const pokesName = document.getElementById("name-pokemon").value;
   const pesquisado = selectName(data.pokemon, pokesName)
+  htmlCards.innerHTML = ""
   criaImagemNoHtml(pesquisado)
   rodarModal()
   limpaCamposTiposFraquezasOrdem()
@@ -120,9 +142,9 @@ document.getElementById("name-pokemon").oninput = () => {
 // função filtrar por tipo
 document.getElementById("filter-type").onchange = () => {
   const htmlCards = document.getElementById("div-pokes")
-  htmlCards.innerHTML = ""
   const filterType = document.getElementById("filter-type").value;
   const filtrado = selectFilter(data.pokemon, filterType)
+  htmlCards.innerHTML = ""
   criaImagemNoHtml(filtrado)
   rodarModal()
   limpaCamposNomeFraquezasOrdem()
@@ -138,24 +160,20 @@ const porcentagem = () => {
 // função filtrar por fraquezas
 document.getElementById("filter-weakness").onchange = () => {
   const htmlCards = document.getElementById("div-pokes")
-  htmlCards.innerHTML = ""
   const weakFilter = document.getElementById("filter-weakness").value;
   const pesquisado = selectWeak(data.pokemon, weakFilter)
+  htmlCards.innerHTML = ""
   criaImagemNoHtml(pesquisado)
   rodarModal()
   limpaCamposNomeTiposOrdem()
 }
 // função filtrar por ordem
 document.getElementById("order-search").onchange = () => {
-  const searchOrder = document.getElementById("order-search")
-  const ordenada = orderPokes(data.pokemon, searchOrder.value)
   const htmlCards = document.getElementById("div-pokes")
+  const searchOrder = document.getElementById("order-search").value;
+  const ordenada = orderPokes(data.pokemon, searchOrder)
   htmlCards.innerHTML = ""
-  let template = ""
-  for (let i = 0; i < data.pokemon.length; i++) {
-    template += pokemonImage(i, ordenada)
-  }
-  htmlCards.innerHTML = template
+  criaImagemNoHtml(ordenada)
   rodarModal()
   limpaCamposNomeTiposFraquezas()
 }
