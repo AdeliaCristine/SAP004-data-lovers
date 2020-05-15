@@ -16,8 +16,10 @@ export const orderPokes = (data, order) => {
   switch (order) {
     case "size":
       return data.sort((a, b) => orderByHeight(a, b))
+    case "size-reverse":
+      return data.sort((a, b) => orderByHeight(a, b)).reverse();
     case "order-spawn":
-      return data.sort((a, b) => orderSpawnChance(a, b))
+      return data.sort((a, b) => orderSpawnChance(a, b)).reverse();
     case "order-az":
       return data.sort((a, b) => orderAZ(a, b))
     case "order-za":
