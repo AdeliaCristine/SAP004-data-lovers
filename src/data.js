@@ -1,23 +1,18 @@
 
-export const selectName = (data, name) => {
-  const pokemonName = name.toUpperCase();
-  return data.filter(search => search.name.toUpperCase().includes(pokemonName))
-}
+export const selectName = (data, name) => 
+  (data.filter(search => search.name.toUpperCase().includes(name.toUpperCase())))
 
-export const selectFilter = (data,filterType) =>{
-  return  data.filter (search => search.type.includes(filterType) )
-}
+export const selectFilter = (data,filterType) =>
+  (data.filter (search => search.type.includes(filterType)))
 
-export const selectWeak = (data,weakFilter) => {
-    return data.filter(search => search.weaknesses.includes(weakFilter))
-}
-
+export const selectWeak = (data,weakFilter) => 
+  (data.filter(search => search.weaknesses.includes(weakFilter)))
 
 const orderAZ = (a, b) => (a["name"]).localeCompare(b["name"])
 const orderZA = (a, b) => (a["name"]).localeCompare(b["name"])
 const orderByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
 const orderSpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
-export function orderPokes(data, order) {
+export const orderPokes = (data, order) => {
   switch (order) {
     case "size":
       return data.sort((a, b) => orderByHeight(a, b))

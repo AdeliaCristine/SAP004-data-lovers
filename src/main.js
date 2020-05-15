@@ -26,7 +26,7 @@ window.onscroll = function () {
   scroll();
 }
 
-function scroll() {
+const scroll =() => {
   let btnTop = document.getElementById("btn-top")
   if (document.documentElement.scrollTop > 0) {
     btnTop.style.display = "block"
@@ -34,15 +34,13 @@ function scroll() {
     btnTop.style.display = "none"
   }
 }
-let scrollTop = function (evt) {
+document.getElementById("btn-top").onclick = function scrollTop(evt) {
   evt.preventDefault();
   window.scrollTo(0, 0);
 };
-document.getElementById("btn-top").addEventListener("click", scrollTop);
 
-function pokemonImage(numeroDoIdDoPersonagem, banco) {
+function pokemonImage(numeroDoIdDoPersonagem, banco)  {
   const way = banco[numeroDoIdDoPersonagem];
-
   let box = `
       <div class="column pokemon backgray" id="pokemon${way.id}" data-id="${way.id}" >
       <img src=${way.img}>
@@ -52,28 +50,25 @@ function pokemonImage(numeroDoIdDoPersonagem, banco) {
   return box;
 }
 
-function criaImagemNoHtml(teste) {
+const criaImagemNoHtml =(teste) => {
   let htmlCards = '';
   for (let i = 0; i < teste.length; i++) {
-
-    htmlCards += pokemonImage(i, teste)
-  }
+  htmlCards += pokemonImage(i, teste)
+}
   document.getElementById("div-pokes").innerHTML += htmlCards;
 }
 criaImagemNoHtml(data.pokemon);
 const pokemons = document.getElementsByClassName("pokemon");
-
-function rodarModal() {
+const rodarModal= () => {
   for (const pokemon of pokemons) {
-    pokemon.addEventListener("click", function () {
+    pokemon.onclick = ()=> {
       const id = pokemon.getAttribute("data-id");
       abrirModal(id)
-    });
+    };
   }
 }
 rodarModal();
-
-function abrirModal(index) {
+const abrirModal= (index) => {
   const caminho = data.pokemon.find(pokemon => pokemon.id == index)
   let box2 = `
       <div class="column backgray" >
@@ -92,35 +87,32 @@ function abrirModal(index) {
   let span = document.getElementsByClassName("close")[0];
   modal.style.display = "block";
   document.getElementById("modal1").innerHTML = box2;
-  span.onclick = function () {
+  span.onclick = () => {
     modal.style.display = "none";
   }
-  window.onclick = function (event) {
+  window.onclick =  (event) => {
     if (event.target == modal) {
       modal.style.display = "none";
     }
+    (box2);
   }
-  return box2;
 }
-
 //Limpar Campos: Tipos, fraquezas e Ordem  *colocar na função nome
-function limpaCamposTiposFraquezasOrdem() {
+const limpaCamposTiposFraquezasOrdem =() =>{
   document.getElementById("filter-type").value = "";
   document.getElementById("div-calc").innerHTML = "";
   document.getElementById("filter-weakness").value = "";
   document.getElementById("order-search").value = "";
 }
-
 //Limpar Campos: Nome, fraquezas e Ordem *colocar na função tipo 2
-function limpaCamposNomeFraquezasOrdem() {
+const limpaCamposNomeFraquezasOrdem = () => {
   document.getElementById("name-pokemon").value = "";
   document.getElementById("filter-weakness").value = "";
   document.getElementById("order-search").value = "";
 
 }
-
 //Limpar Campos: Nome,Tipos e Ordem *colocar na função fraqueza 3
-function limpaCamposNomeTiposOrdem() {
+const limpaCamposNomeTiposOrdem = () => {
   document.getElementById("name-pokemon").value = "";
   document.getElementById("filter-type").value = "";
   document.getElementById("div-calc").innerHTML = "";
@@ -128,14 +120,12 @@ function limpaCamposNomeTiposOrdem() {
 }
 
 //Limpar Campos: Nome,tipo e fraqueza *colocar na função ordem 4
-function limpaCamposNomeTiposFraquezas() {
+const  limpaCamposNomeTiposFraquezas = () => {
   document.getElementById("name-pokemon").value = "";
   document.getElementById("filter-type").value = "";
   document.getElementById("div-calc").innerHTML = "";
   document.getElementById("filter-weakness").value = "";
 }
-
-
 //Nome
 document.getElementById("name-pokemon").oninput = function searchName() {
   const htmlCards = document.getElementById("div-pokes")
@@ -146,7 +136,6 @@ document.getElementById("name-pokemon").oninput = function searchName() {
   rodarModal()
   limpaCamposTiposFraquezasOrdem()
 }
-
 // função filtrar por tipo
 document.getElementById("filter-type").onchange = function typeFilter() {
   const htmlCards = document.getElementById("div-pokes")
@@ -158,16 +147,13 @@ document.getElementById("filter-type").onchange = function typeFilter() {
   limpaCamposNomeFraquezasOrdem()
   porcentagem()
 };
-
-function porcentagem() {
+const porcentagem = () =>{
   const way = data.pokemon
   const filterType = document.getElementById("filter-type").value;
-  const tipo = way.filter(search => search.type.includes(filterType))
-  let result = Math.round((tipo.length / way.length) * 100) / 100
-  document.getElementById("div-calc").innerHTML = `Temos ${result} % de pokemons do tipo ${filterType1}.`
-
+  const tipo =  way.filter(search => search.type.includes(filterType))
+  let result = Math.round(((tipo.length *100)/way.length) * 100)/100
+  document.getElementById("div-calc").innerHTML=`Temos ${result} % de pokemons desse tipo .`
 }
-
 // função filtrar por fraquezas
 document.getElementById("filter-weakness").onchange = function filterWeak() {
   const htmlCards = document.getElementById("div-pokes")
@@ -178,9 +164,7 @@ document.getElementById("filter-weakness").onchange = function filterWeak() {
   rodarModal()
   limpaCamposNomeTiposOrdem()
 }
-
 // função filtrar por ordem
-
 document.getElementById("order-search").onchange = function () {
   const searchOrder = document.getElementById("order-search")
   const ordenada = orderPokes(data.pokemon, searchOrder.value)
