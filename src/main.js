@@ -1,8 +1,27 @@
-import {  orderPokes,  selectName,  selectFilter,  selectWeak}
- from './data.js';
+import {
+  orderPokes,
+  selectName,
+  selectFilter,
+  selectWeak
+}
+from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-//Botão topo
+
+
+document.getElementById("home").onclick = function homeBtn() {
+  window.open("index.html");
+}
+
+document.getElementById("play").onclick = function homeBtn() {
+  window.open("https://www.pokemongo.com/pt-pt/");
+}
+
+document.getElementById("btn-all").onclick = function homeBtn() {
+  window.open("personagens.html");
+}
+
+
 window.onscroll = function () {
   scroll();
 }
@@ -90,7 +109,7 @@ function limpaCamposTiposFraquezasOrdem() {
   document.getElementById("div-calc").innerHTML = "";
   document.getElementById("filter-weakness").value = "";
   document.getElementById("order-search").value = "";
-  }
+}
 
 //Limpar Campos: Nome, fraquezas e Ordem *colocar na função tipo 2
 function limpaCamposNomeFraquezasOrdem() {
@@ -140,17 +159,14 @@ document.getElementById("filter-type").onchange = function typeFilter() {
   porcentagem()
 };
 
-function porcentagem(){
+function porcentagem() {
   const way = data.pokemon
   const filterType = document.getElementById("filter-type").value;
-  const tipo =  way.filter(search => search.type.includes(filterType))
-  let result = Math.round((tipo.length/way.length) * 100)/100
-  document.getElementById("div-calc").innerHTML=`Temos ${result} % de pokemons do tipo ${filterType1}.`
+  const tipo = way.filter(search => search.type.includes(filterType))
+  let result = Math.round((tipo.length / way.length) * 100) / 100
+  document.getElementById("div-calc").innerHTML = `Temos ${result} % de pokemons do tipo ${filterType1}.`
 
 }
-
-  
-
 
 // função filtrar por fraquezas
 document.getElementById("filter-weakness").onchange = function filterWeak() {
