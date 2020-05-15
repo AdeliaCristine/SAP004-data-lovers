@@ -13,11 +13,8 @@ body {
   background-color: #f5f5f580;
 }
 
-.font-std,
-input,
-select {
+.font-std, input, select {
   font-family: 'Bangers', cursive;
-
 }
 
 .menu {
@@ -28,7 +25,6 @@ select {
   align-content: center;
   font-size: 20px;
 }
-
 
 label {
   font-size: 16px;
@@ -48,7 +44,6 @@ label {
   position: relative;
   margin-left: 10px;
   background-image: linear-gradient(to right, whitesmoke, #f5f5f54f);
-
 }
 
 .search-form {
@@ -67,7 +62,7 @@ label {
   display: flex;
 }
 
-main {
+#personagem {
   width: 1000px;
   max-width: 85%;
   height: 6000px;
@@ -82,18 +77,20 @@ main {
 
 .presentation {
   width: 1000px;
-  height: 160px;
+  height: 520px;
+  max-width: 85%;
+  align-content: center;
   border-radius: 20px;
   border-color: silver;
-  margin: 10px;
+  margin-left: 80px;
   position: relative;
   text-align: center;
-  padding: 5px;
+  padding: 3px;
   align-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font: 26px;
+  display: block;
 }
-
 
 .column {
   font-family: 'Bangers', cursive;
@@ -102,8 +99,8 @@ main {
   margin: 10px;
   border-radius: 20px;
   border-color: silver;
-  float:left;
-  width:auto;
+  float: left;
+  width: auto;
   padding: 10px;
 }
 
@@ -115,7 +112,7 @@ main {
 
 h1 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 35px;
+  font-size: 30px;
   color: whitesmoke;
   font-weight: 600;
 }
@@ -126,14 +123,12 @@ button {
   border-radius: 30%;
   color: black;
   background-color: #e7cb2d;
-
 }
 
 .btn-go {
   color: #4769ff;
   border-radius: 100%;
   font-size: 30px;
-
 }
 
 .btn-top {
@@ -150,7 +145,6 @@ button:hover {
   transform: scale(1.08);
 }
 
-
 .details {
   display: none;
   position: fixed;
@@ -165,8 +159,8 @@ button:hover {
 .details-content {
   background-image: url("fundoceu.jpeg");
   padding: 20px;
-  width: fit-content; 
-  height: 550px; 
+  width: fit-content;
+  height: 550px;
   border: 1px solid #888;
   border-radius: 10px;
 }
@@ -181,7 +175,7 @@ button:hover {
   position: relative;
 }
 
-.close:hover{
+.close:hover {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -194,12 +188,9 @@ button:hover {
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #1983caaf;
-
 }
 
 @media(max-width:600px) {
-
-
   .column {
     width: 38%;
     float: center;
@@ -207,20 +198,15 @@ button:hover {
     align-self: auto;
     margin-left: 0px;
     margin-right: 10px;
-
   }
-
   .list {
     margin-left: -30px;
     margin-right: 5px;
     width: auto;
   }
-
   label {
     display: none;
-
   }
-
   .search-form {
     font-size: 16px;
     height: auto;
@@ -231,22 +217,26 @@ button:hover {
     position: top;
     display: block;
   }
-
-
   .modal {
     padding-left: 20px;
   }
-
   .btn-top {
     width: 50px;
     border-radius: 100%;
-
   }
-
   .menu {
-
     margin-left: -10px;
-
   }
-
+  .presentation {
+    width: 80%;
+    height: 650px;
+    margin: 20px auto;
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    align-content: center;
+  }
+  #imagem {
+    width: 80%;
+  }
 }

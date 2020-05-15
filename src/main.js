@@ -11,10 +11,12 @@ document.getElementById("play").onclick = () => (
   window.open("https://www.pokemongo.com/pt-pt/"));
 
 document.getElementById("btn-all").onclick = () => {
+/*   window.open("personagens.html") */
+ 
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
   limpaTudo();
-  criaImagemNoHtml(data.pokemon);
+  criaImagemNoHtml(data.pokemon, teste);
   rodarModal()
 }
 
@@ -132,9 +134,9 @@ const limpaCamposNomeTiposFraquezas = () => {
 //Nome
 document.getElementById("name-pokemon").oninput = () => {
   const htmlCards = document.getElementById("div-pokes")
+  htmlCards.innerHTML = ""
   const pokesName = document.getElementById("name-pokemon").value;
   const pesquisado = selectName(data.pokemon, pokesName)
-  htmlCards.innerHTML = ""
   criaImagemNoHtml(pesquisado)
   rodarModal()
   limpaCamposTiposFraquezasOrdem()
@@ -142,9 +144,9 @@ document.getElementById("name-pokemon").oninput = () => {
 // função filtrar por tipo
 document.getElementById("filter-type").onchange = () => {
   const htmlCards = document.getElementById("div-pokes")
+  htmlCards.innerHTML = ""
   const filterType = document.getElementById("filter-type").value;
   const filtrado = selectFilter(data.pokemon, filterType)
-  htmlCards.innerHTML = ""
   criaImagemNoHtml(filtrado)
   rodarModal()
   limpaCamposNomeFraquezasOrdem()
@@ -160,9 +162,9 @@ const porcentagem = () => {
 // função filtrar por fraquezas
 document.getElementById("filter-weakness").onchange = () => {
   const htmlCards = document.getElementById("div-pokes")
+  htmlCards.innerHTML = ""
   const weakFilter = document.getElementById("filter-weakness").value;
   const pesquisado = selectWeak(data.pokemon, weakFilter)
-  htmlCards.innerHTML = ""
   criaImagemNoHtml(pesquisado)
   rodarModal()
   limpaCamposNomeTiposOrdem()
@@ -170,9 +172,9 @@ document.getElementById("filter-weakness").onchange = () => {
 // função filtrar por ordem
 document.getElementById("order-search").onchange = () => {
   const htmlCards = document.getElementById("div-pokes")
+  htmlCards.innerHTML = ""
   const searchOrder = document.getElementById("order-search").value;
   const ordenada = orderPokes(data.pokemon, searchOrder)
-  htmlCards.innerHTML = ""
   criaImagemNoHtml(ordenada)
   rodarModal()
   limpaCamposNomeTiposFraquezas()
