@@ -16,18 +16,17 @@
         </div>
     </div>
     <header>
-        <nav class="menu">
+        <nav class="menu font-std">
             <ul class="list">
-                <li> <button id="home"><a href="index.html">Tela inicial </a></button></li>
-                <li> <button id="play"> <a href="https://www.pokemongo.com/pt-pt/" target="_blank">Ir para
-                            Jogo</a> </button></li>
-                <li> <button id="btn-all" class="btn-all"><a href="personagens.html">Ver Todos </a> </button>
+                <li> <button id="home" class="font-std" > Tela Inicial</button></li>
+                <li> <button id="play" class="font-std"> Ir pro Jogo</a> </button></li>
+                <li> <button id="btn-all" class="btn-all font-std">Ver Todos </a> </button>
                 </li>
             </ul>
 
             <form action="" id="search-form" class="search-form backgray">
                 <section>
-                    <!-- <div class="list"> -->
+
                     <label for="name-pokemon" class="name-search">Buscar por Nome:</label>
                     <input type="text" id="name-pokemon" placeholder="Nome do Pokémon">
                     <label for="filter-type" class="filter-type"> Filtrar por:</label>
@@ -77,7 +76,6 @@
                         <option value="size"> Tamanho </option>
                         <option value="order-spawn"> Chance de Captura</option>
                     </select>
-                    <!--  </div> -->
                 </section>
             </form>
         </nav>
@@ -86,11 +84,11 @@
     <main>
         <div id="div-calc" class="calc-area backgray"></div>
         <div id="numero"></div>
-        <div id="div-pokes"></div>
+        <div id="div-pokes" class="div-pokes font-std"></div>
 
 
     </main>
-    <button id="btn-top" class="btn-top botao">Topo</button>
+    <button id="btn-top" class="btn-top font-std">Topo</button>
     <script src="main.js" type="module"></script>
 </body>
 

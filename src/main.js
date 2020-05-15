@@ -1,9 +1,28 @@
-import { selectName,selectFilter,selectWeak,orderPokes,}
- from './data.js';
+import {
+  orderPokes,
+  selectName,
+  selectFilter,
+  selectWeak
+}
+from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-//Botão topo
-window.onscroll =  () => {
+
+
+document.getElementById("home").onclick = function homeBtn() {
+  window.open("index.html");
+}
+
+document.getElementById("play").onclick = function homeBtn() {
+  window.open("https://www.pokemongo.com/pt-pt/");
+}
+
+document.getElementById("btn-all").onclick = function homeBtn() {
+  window.open("personagens.html");
+}
+
+
+window.onscroll = function () {
   scroll();
 }
 
