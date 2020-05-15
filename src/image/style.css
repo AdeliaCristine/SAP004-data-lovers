@@ -235,6 +235,7 @@ button:hover {
     text-align: center;
     padding: 5px;
     align-content: center;
+    background-color: #f5f5f500;
   }
   #imagem {
     width: 80%;
