@@ -2,7 +2,8 @@ import { selectName, selectFilter, selectWeak, orderPokes }
   from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-
+/* document.getElementById("btn-go").addEventListener("click", function(){
+ window.open("personagens.html")}) */
 
 document.getElementById("home").onclick = () => (
   window.open("index.html"));
@@ -10,13 +11,19 @@ document.getElementById("home").onclick = () => (
 document.getElementById("play").onclick = () => (
   window.open("https://www.pokemongo.com/pt-pt/"));
 
-document.getElementById("btn-all").onclick = () => {
-  const htmlCards = document.getElementById("div-pokes")
+document.getElementById("btn-all").onclick = () => (
+document.location.reload(true));
+
+
+
+ 
+/*   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
-  criaImagemNoHtml(data.pokemon);
-  rodarModal()
   limpaTudo();
-}
+  criaImagemNoHtml(data.pokemon, teste);
+  rodarModal() */
+
+
 
 window.onscroll = () => (
   scroll());
@@ -38,7 +45,7 @@ function pokemonImage(numeroDoIdDoPersonagem, banco) {
   const way = banco[numeroDoIdDoPersonagem];
   let box = `
       <div class="column pokemon backgray" id="pokemon${way.id}" data-id="${way.id}" >
-      <img src=${way.img}>
+      <img class="pokes-img" src=${way.img}>
       <p class="text">${way.name}</p>
       </div>
 `;
@@ -66,17 +73,17 @@ rodarModal();
 const abrirModal = (index) => {
   const caminho = data.pokemon.find(pokemon => pokemon.id == index)
   let box2 = `
-      <div class="column backgray" >
+      <div class="column-modal backgray" >
       <img src=${caminho.img}>
-      <p class="text">${caminho.name}</p>
-      <p class="text">Tipo:${caminho.type}</p>
-      <p class="text">Candy:${caminho.candy}</p>
-      <p class="text">Altura:${caminho.height}</p>
-      <p class="text">Peso:${caminho.weight}</p>
-      <p class="text">Fraqueza:${caminho.weaknesses}</p>
-      <p class=text">Chance de captura:${caminho.spawn_chance}</p>
-      <p class="text">Evolução Anterior:${caminho.prev_evolution ? caminho.prev_evolution[0].name : "Não tem evolução"}</p>
-      <p class="text">Proxima Evolução:${caminho.next_evolution ? caminho.next_evolution[0].name : "Não tem evolução"}</p>
+      <p> ${caminho.name}</p>
+      <p> Tipo:${caminho.type}<br/>
+       Candy:${caminho.candy}<br/>
+       Altura:${caminho.height}<br/>
+       Peso:${caminho.weight}<br/>
+       Fraqueza:${caminho.weaknesses}<br/>
+       Chance de captura:${caminho.spawn_chance}<br/>
+       Evolução Anterior:${caminho.prev_evolution ? caminho.prev_evolution[0].name : "Não tem evolução"}<br/>
+       Proxima Evolução:${caminho.next_evolution ? caminho.next_evolution[0].name : "Não tem evolução"}</p>
       </div>`
   let modal = document.getElementById("details");
   let span = document.getElementsByClassName("close")[0];
@@ -132,9 +139,9 @@ const limpaCamposNomeTiposFraquezas = () => {
 //Nome
 document.getElementById("name-pokemon").oninput = () => {
   const htmlCards = document.getElementById("div-pokes")
+  htmlCards.innerHTML = ""
   const pokesName = document.getElementById("name-pokemon").value;
   const pesquisado = selectName(data.pokemon, pokesName)
-  htmlCards.innerHTML = ""
   criaImagemNoHtml(pesquisado)
   rodarModal()
   limpaCamposTiposFraquezasOrdem()
@@ -142,9 +149,9 @@ document.getElementById("name-pokemon").oninput = () => {
 // função filtrar por tipo
 document.getElementById("filter-type").onchange = () => {
   const htmlCards = document.getElementById("div-pokes")
+  htmlCards.innerHTML = ""
   const filterType = document.getElementById("filter-type").value;
   const filtrado = selectFilter(data.pokemon, filterType)
-  htmlCards.innerHTML = ""
   criaImagemNoHtml(filtrado)
   rodarModal()
   limpaCamposNomeFraquezasOrdem()
@@ -160,9 +167,9 @@ const porcentagem = () => {
 // função filtrar por fraquezas
 document.getElementById("filter-weakness").onchange = () => {
   const htmlCards = document.getElementById("div-pokes")
+  htmlCards.innerHTML = ""
   const weakFilter = document.getElementById("filter-weakness").value;
   const pesquisado = selectWeak(data.pokemon, weakFilter)
-  htmlCards.innerHTML = ""
   criaImagemNoHtml(pesquisado)
   rodarModal()
   limpaCamposNomeTiposOrdem()
@@ -170,9 +177,9 @@ document.getElementById("filter-weakness").onchange = () => {
 // função filtrar por ordem
 document.getElementById("order-search").onchange = () => {
   const htmlCards = document.getElementById("div-pokes")
+  htmlCards.innerHTML = ""
   const searchOrder = document.getElementById("order-search").value;
   const ordenada = orderPokes(data.pokemon, searchOrder)
-  htmlCards.innerHTML = ""
   criaImagemNoHtml(ordenada)
   rodarModal()
   limpaCamposNomeTiposFraquezas()
