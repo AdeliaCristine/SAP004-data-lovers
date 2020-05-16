@@ -13,9 +13,9 @@ document.getElementById("play").onclick = () => (
 document.getElementById("btn-all").onclick = () => {
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
-  limpaTudo();
   criaImagemNoHtml(data.pokemon);
   rodarModal()
+  limpaTudo();
 }
 
 window.onscroll = () => (
