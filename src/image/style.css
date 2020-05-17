@@ -240,4 +240,9 @@ button:hover {
   #imagem {
     width: 80%;
   }
+  .details {
+ 
+    padding-left: 10px;
+  
+  }
 }

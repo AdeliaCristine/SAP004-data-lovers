@@ -12,7 +12,7 @@ document.getElementById("play").onclick = () => (
 
 document.getElementById("btn-all").onclick = () => {
 /*   window.open("personagens.html") */
- 
+
   const htmlCards = document.getElementById("div-pokes")
   htmlCards.innerHTML = ""
   limpaTudo();

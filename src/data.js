@@ -11,6 +11,7 @@ export const selectWeak = (data,weakFilter) =>
 const orderAZ = (a, b) => (a["name"]).localeCompare(b["name"])
 const orderZA = (a, b) => (a["name"]).localeCompare(b["name"])
 const orderByHeight = (a, b) => Number(a["height"].split(" ")[0]) - Number(b["height"].split(" ")[0])
+
 const orderSpawnChance = (a, b) => Number(a["spawn_chance"]) - Number(b["spawn_chance"])
 export const orderPokes = (data, order) => {
   switch (order) {
