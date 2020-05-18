@@ -18,19 +18,19 @@
     <header>
         <nav class="menu font-std">
             <ul class="list">
-                <li> <button id="home" class="font-std"> Tela Inicial</button></li>
-                <li> <button id="play" class="font-std"> Ir pro Jogo </button></li>
-                <li> <button id="btn-all" class="btn-all font-std">Ver Todos</button>
+                <li> <button id="home" class="font-std button"> Tela Inicial</button></li>
+                <li> <button id="play" class="font-std button"> Ir pro Jogo </button></li>
+                <li> <button id="btn-all" class="btn-all font-std button">Ver Todos</button>
                 </li>
             </ul>
 
             <form action="" id="search-form" class="search-form font-std">
                 <section class="menu2 backgray">
 
-                    <label for="name-pokemon" class="name-search">Buscar por Nome:</label>
-                    <input type="text" id="name-pokemon" placeholder="Nome do Pokémon">
-                    <label1 for="filter-type" class="filter-type"> Filtrar por:</label1>
-                    <select id="filter-type" class="filter-type">
+                    <label for="name-pokemon" class="name-search label">Buscar por Nome:</label>
+                    <input class="input" type="text" id="name-pokemon" placeholder="Nome do Pokémon">
+                    <label for="filter-type" class="filter-type label1"> Filtrar por:</label>
+                    <select id="filter-type" class="filter-type select">
                         <option value="" disabled selected> Tipos</option>
                         <option value="Water">Água</option>
                         <option value="Dragon">Dragão</option>
@@ -50,8 +50,8 @@
                     </select>
 
 
-                    <label1 for="filter-weakness" class="filter-weakness">Filtrar por:</label1>
-                    <select id="filter-weakness" class="filter-weakness">
+                    <label for="filter-weakness" class="filter-weakness label1">Filtrar por:</label>
+                    <select id="filter-weakness" class="filter-weakness select">
                         <option value="" disabled selected> Fraquezas</option>
                         <option value="Water">Água</option>
                         <option value="Dragon">Dragão</option>
@@ -68,8 +68,8 @@
                         <option value="Poison">Venenoso</option>
                         <option value="Flying">Voador</option>
                     </select>
-                    <label for="order-search" class="order-search"> Ordenar por:</label>
-                    <select id="order-search" class="order-search">
+                    <label for="order-search" class="order-search label"> Ordenar por:</label>
+                    <select id="order-search" class="order-search select">
                         <option id="teste" value="" disabled selected> Escolha a Ordem:</option>
                         <option value="order-az"> Nomes A - Z</option>
                         <option value="order-za"> Nomes Z - A</option>
@@ -84,7 +84,6 @@
 
     <main class="main-poke">
         <div id="div-calc" class="calc-area backgray"></div>
-        <div id="numero"></div>
         <div id="div-pokes" class="div-pokes font-std"></div>
     </main>
     <button id="btn-top" class="btn-top font-std">Topo</button>
