@@ -1,4 +1,4 @@
-import { selectName, selectFilter, selectWeak, orderPokes }
+import { selectName, selectFilter, selectWeak, orderPokes, porcentagem }
   from './data.js';
 import data from './data/pokemon/pokemon.js';
 
@@ -100,13 +100,13 @@ const abrirModal = (index) => {
   }
 }
 //Limpa todos os campos
-const limpaTudo = () => {
+/* const limpaTudo = () => {
   document.getElementById("name-pokemon").value = "";
   document.getElementById("filter-type").value = "";
   document.getElementById("div-calc").innerHTML = "";
   document.getElementById("filter-weakness").value = "";
   document.getElementById("order-search").value = "";
-}
+} */
 //Limpar Campos: Tipos, fraquezas e Ordem  *colocar na função nome
 const limpaCamposTiposFraquezasOrdem = () => {
   document.getElementById("filter-type").value = "";
@@ -155,13 +155,11 @@ document.getElementById("filter-type").onchange = () => {
   criaImagemNoHtml(filtrado)
   rodarModal()
   limpaCamposNomeFraquezasOrdem()
-  porcentagem()
+  percent()
 };
-const porcentagem = () => {
-  const way = data.pokemon
-  const filterType = document.getElementById("filter-type").value;
-  const tipo = way.filter(search => search.type.includes(filterType))
-  let result = Math.round(((tipo.length * 100) / way.length) * 100) / 100
+const percent = () => {
+const filterType = document.getElementById("filter-type").value;
+const result = porcentagem(data.pokemon,filterType)
   document.getElementById("div-calc").innerHTML = `Temos ${result} % de pokemons desse tipo .`
 }
 // função filtrar por fraquezas

@@ -1,4 +1,4 @@
-import { selectName, selectFilter, selectWeak, orderPokes } from '../src/data.js';
+import { selectName, selectFilter, selectWeak, orderPokes, porcentagem } from '../src/data.js';
 
 const pokemonMock = {
   pokemon: [{
@@ -65,7 +65,18 @@ describe('Selecting a pokemon by type', () => {
     const result = selectFilter(pokemonMock.pokemon, "Water", "type")
     expect(result[0].name).toEqual("Squirtle")
   });
+});
 
+//teste para porcentagem
+describe('Showing the percentage of the type',() => {
+  it('should be a function', () => {
+    expect(typeof porcentagem). toBe ('function');
+   });
+   it ('shold return 66.67, for type "Grass"',() =>{
+    const result = porcentagem(pokemonMock.pokemon, "Grass", "type")
+    expect(result).toEqual(66.67)
+    console.log(result)
+  });
 });
 
 // Teste filtrar por fraqueza
@@ -78,6 +89,8 @@ describe('Selecting a pokemon by weakness', () => {
     expect(result[0].name).toEqual("Squirtle")
   });
 });
+
+
 
 // Teste Ordenar
 

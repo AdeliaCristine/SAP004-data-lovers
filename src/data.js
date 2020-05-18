@@ -5,6 +5,11 @@ export const selectName = (data, name) =>
 export const selectFilter = (data,filterType) =>
   (data.filter (search => search.type.includes(filterType)))
 
+export const porcentagem = (data,filterType) => {
+    const tipo = data.filter(search => search.type.includes(filterType))
+    return Math.round(((tipo.length * 100) / data.length) * 100) / 100
+  }
+
 export const selectWeak = (data,weakFilter) => 
   (data.filter(search => search.weaknesses.includes(weakFilter)))
 
