@@ -5,18 +5,28 @@
 ## Índice
 
 * [1. Definição de produto](#1-definicao-de-produto)
-* [2. Definição de persona ](#2-definicao-de-persona )
-* [3. Protótipo de baixa fidelidade](#3-prototipo-de-baixa-fidelidade)
-* [4. Teste de usabilidade](#4-teste-de-usabilidade)
-* [5. Histórias de usuário](#5-historias-de-usuarios)
+* [2. Planejamento ](#2-planejamento )
+* [3. Definição de persona ](#3-definicao-de-persona )
+* [4. Protótipo de baixa fidelidade](#4-prototipo-de-baixa-fidelidade)
+* [5. Teste de usabilidade](#5-teste-de-usabilidade)
+* [6. Histórias de usuário](#6-historias-de-usuarios)
+* [7. Entrega Final ](#7-entrega-final )
 
 
 
 ## 1. Definição do produto  
 Nosso site permite com que jogadores novos e antigos, possam consultar as características de cada pokemon, como tipos, fraquezas e outros detalhes importantes antes de começar um jogo.  Dessa forma, podem usar a aplicação como um guia de bolso, sempre que precisarem de detalhes  sobre os pokes.  
 
-## 2. Definição das personas   
+## 2. Planejamento
+Para realizar o nosso planejamento inicial realizamos um floxograma com as funções básicas.
+ ![img](/-image/fluxograma.png)
+
+Para ilustrar o nosso planejamento final veja abaixo o nosso trello.
+ ![img](/-image/trello.jpeg)
+
+## 3. Definição das personas   
   ### Ele: João Pereira 
+  ![img](/-image/menino.jpeg)
   Idade: 32 anos;
   Profissão: Engenheiro;
   Classe Social: Média
@@ -25,6 +35,7 @@ Nosso site permite com que jogadores novos e antigos, possam consultar as caract
   Detalhes:  É jogador mais avançado, consulta o site para tirar eventuais dúvidas sobre cada pokemon. 
 
   ### Ela: Luíza Santos 
+   ![img](/-image/menina.jpeg)
   Idade: 17 anos;
   Profissão: Estudante;
   Classe Social: Média baixa
@@ -87,3 +98,15 @@ E almentamos a caixa de fundo de cada pokémon.
 
  10- CP... posso visualizar a porcentagem de pokémons pertencente à cada tipo selecionado.
  - Definição de pronto: Exibe a informação no HTML via função JS.
+
+## 7. Entrega Final
+Ilustramos aqui nossa entrega final.
+
+![img](/-image/tela inicial.jpeg) 
+*Página inicial.
+
+![img](/-image/personagens.jpeg)
+*Página com a apresentação dos Pokemons.
+
+![img](/-image/porcentagem.jpeg)
+*Cálculo da porcentagem.
