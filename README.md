@@ -19,14 +19,14 @@ Nosso site permite com que jogadores novos e antigos, possam consultar as caract
 
 ## 2. Planejamento
 Para realizar o nosso planejamento inicial realizamos um floxograma com as funções básicas.
- ![img](/-SAP004-DATA-LOVERS/src/image/fluxograma.png)
+ ![img](/-src/image/fluxograma.png)
 
 Para ilustrar o nosso planejamento final veja abaixo o nosso trello.
- ![img](/-SAP004-DATA-LOVERS/src/image/trello.jpeg)
+ ![img](/-src/image/trello.jpeg)
 
 ## 3. Definição das personas   
   ### Ele: João Pereira 
-  ![img](/-SAP004-DATA-LOVERS/src/image/menino.jpeg)
+  ![img](/-src/image/menino.jpeg)
   Idade: 32 anos;
   Profissão: Engenheiro;
   Classe Social: Média
@@ -35,7 +35,7 @@ Para ilustrar o nosso planejamento final veja abaixo o nosso trello.
   Detalhes:  É jogador mais avançado, consulta o site para tirar eventuais dúvidas sobre cada pokemon. 
 
   ### Ela: Luíza Santos 
-   ![img](/-SAP004-DATA-LOVERS/src/image/menina.jpeg)
+   ![img](/-src/image/menina.jpeg)
   Idade: 17 anos;
   Profissão: Estudante;
   Classe Social: Média baixa
@@ -102,11 +102,11 @@ E almentamos a caixa de fundo de cada pokémon.
 ## 7. Entrega Final
 Ilustramos aqui nossa entrega final.
 
-![img](/-SAP004-DATA-LOVERS/src/image/tela inicial.jpeg) 
+![img](/-src/image/tela inicial.jpeg) 
 *Página inicial.
 
-![img](/-SAP004-DATA-LOVERS/src/image/personagens.jpeg)
+![img](/-src/image/personagens.jpeg)
 *Página com a apresentação dos Pokemons.
 
-![img](/-SAP004-DATA-LOVERS/src/image/porcentagem.jpeg)
+![img](/-src/image/porcentagem.jpeg)
 *Cálculo da porcentagem.
