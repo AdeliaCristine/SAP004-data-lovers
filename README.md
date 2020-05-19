@@ -22,11 +22,13 @@ Para realizar o nosso planejamento inicial realizamos um floxograma com as funç
 ![Floxograma](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/fluxograma.png)
 
 Para ilustrar o nosso planejamento final veja abaixo o nosso trello.
- ![Trello](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/trello.jpeg)
+ ![Trello](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/trello.jpeg = 315 x 300)
 
 ## 3. Definição das personas   
   ### Ele: João Pereira 
-  ![Persona](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/menino.jpeg)
+  ![Persona](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/menino.jpeg  =300 )
+
+
   Idade: 32 anos;
   Profissão: Engenheiro;
   Classe Social: Média
@@ -36,6 +38,7 @@ Para ilustrar o nosso planejamento final veja abaixo o nosso trello.
 
   ### Ela: Luíza Santos 
    ![Persona](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/menina.jpeg)
+
   Idade: 17 anos;
   Profissão: Estudante;
   Classe Social: Média baixa
@@ -103,9 +106,12 @@ E almentamos a caixa de fundo de cada pokémon.
 Ilustramos aqui nossa entrega final.
 
 ![Página Inicial](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/tela%20inicial.jpeg) 
+*Página Inicial
 
 
 ![Página com a apresentação dos Pokemons.](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/personagens.jpeg)
+*Página com a apresentação dos Pokemons.
 
 
 ![Cálculo da porcentagem.](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/Porcentagem.jpeg)
+*Cálculo da porcentagem.
