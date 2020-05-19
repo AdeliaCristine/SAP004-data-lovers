@@ -23,10 +23,11 @@ Para realizar o nosso planejamento inicial realizamos um floxograma com as funç
 
 Para ilustrar o nosso planejamento final veja abaixo o nosso trello.
  ![Trello](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/trello.jpeg = 315 x 300)
+ ![Trello](./src/image/trello.jpeg =315x300)
 
 ## 3. Definição das personas   
   ### Ele: João Pereira 
-  ![Persona](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/menino.jpeg  =300 )
+  ![Persona](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/menino.jpeg widht=315 )
 
 
   Idade: 32 anos;
