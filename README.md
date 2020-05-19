@@ -104,6 +104,8 @@ E almentamos a caixa de fundo de cada pokémon.
  - Definição de pronto: Exibe a informação no HTML via função JS.
 
 ## 7. Entrega Final
+
+
 Ilustramos aqui nossa entrega final.
 
 ![Página Inicial](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/tela%20inicial.jpeg) 
@@ -118,3 +120,9 @@ Ilustramos aqui nossa entrega final.
 
 ![Cálculo da porcentagem.](https://github.com/AdeliaCristine/SAP004-data-lovers/blob/master/src/image/Porcentagem.jpeg)
 * Cálculo da porcentagem.
+
+Confira [aqui](https://adeliacristine.github.io/SAP004-data-lovers/src) e confira. 
+
+
+
+by Daiane Viera e Adélia Cristine
