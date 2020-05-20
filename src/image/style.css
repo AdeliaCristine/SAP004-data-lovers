@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-image: url("/src/image/fundoceu.jpeg");
+  background-image: url("fundoceu.jpeg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
