@@ -10,13 +10,13 @@ html {
 }
 
 body {
-  background-image: url("fundoceu.jpeg");
+  background-image: url("/src/image/fundoceu.jpeg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.backgray, .homepage {
+.backgray,.homepage {
   background-color: #f5f5f580;
 }
 
@@ -86,8 +86,8 @@ body {
   max-width: 85%;
   height: 90vh;
   border-radius: 20px;
-  margin-top: 10px;
   margin: auto;
+  margin-top: 20px;
   position: center;
   align-content: center;
   text-align: center;
@@ -139,9 +139,12 @@ h1 {
 }
 
 .btn-go {
-  border-radius: 100%;
-  font-size: 30px;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
   position: relative;
+  background-color: #f5f5f580;
+
 }
 
 a:link {
@@ -155,7 +158,7 @@ a:link {
   position: fixed;
 }
 
-.button:hover {
+.button:hover, .btn-go:hover {
   text-decoration: none;
   color: #4769ff;
   background-color: #f5f5f5cc;
@@ -208,8 +211,12 @@ a:link {
 }
 
 @media (max-width:768px) {
-  .font-std, .input, .select {
+
+  .font-std, .input, .select, .column, .column-modal {
     font-family: Arial, Helvetica, sans-serif;
+  }
+  h1 {
+    font-size: 20px;
   }
   .column {
     width: 38%;
@@ -218,17 +225,20 @@ a:link {
     margin-left: 0px;
     margin-right: 10px;
   }
+
   .list {
     margin-left: 150px;
     margin-right: 0px;
     width: auto;
     display: flexbox;
   }
+
   .label {
     margin-left: -20px;
     display: none;
     font: 10px;
   }
+
   .menu, .menu2 {
     width: 270px;
     max-width: 60%;
@@ -244,13 +254,13 @@ a:link {
     align-content: center;
     display: inline-flexbox;
   }
+
   .homepage {
     width: 85vw;
     max-width: 90%;
     height: 600px;
     max-height: 90%;
-    margin-top: 50px;
-    margin-left: 10PX;
+    margin: auto;
     text-align: center;
     align-content: space-between;
     display: block;
@@ -258,16 +268,19 @@ a:link {
     text-align: center;
     padding: 15px;
   }
+
   .btn-top {
     width: 50px;
     border-radius: 100%;
   }
+
   .details {
     width: 90%;
     padding-left: 5px;
     background-color: #f5f5f580;
     ;
   }
+
   .details-content {
     background-image: url("fundoceu.jpeg");
     padding: 0px;
@@ -276,8 +289,8 @@ a:link {
     border: 1px solid #888;
     border-radius: 10px;
   }
+
   .column-modal {
-    font-family: Arial, Helvetica, sans-serif;
     font: 12px;
     margin-left: 20px;
     border-radius: 20px;
@@ -288,6 +301,7 @@ a:link {
     padding: 10px;
     line-height: 25px;
   }
+
   .image {
     width: 80%;
   }
